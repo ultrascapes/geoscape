@@ -1,0 +1,124 @@
+%button {
+    padding: 20px;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    display: inline-block;
+    text-decoration: none;
+    min-width: 150px;
+}
+
+%button-primary {
+    @extend %button;
+    background-color: $primary;
+    border: darken($primary, 10%) solid 1px;
+    @if(lightness($primary) < 70%) {
+        color: $white;
+        text-shadow: 1px 1px 2px rgba($color: darken($primary, 30%), $alpha: 1);
+    } @else {
+        color: $black;
+        text-shadow: 1px 1px 2px rgba($color: lighten($primary, 50%), $alpha: 1);
+    }
+    box-shadow: 1px 1px 2px rgba($color: $primary-darkest, $alpha: 0.5);
+    transition: background-color 500ms, border 500ms;
+    &:hover {
+        background-color: darken($primary, 5%);
+        border: darken($primary, 15%) solid 1px;
+    }
+}
+
+%button-accent {
+    @extend %button;
+    background-color: $accent;
+    border: darken($accent, 10%) solid 1px;
+    @if(lightness($accent) < 70%) {
+        color: $white;
+        text-shadow: 1px 1px 2px rgba($color: darken($accent, 30%), $alpha: 1);
+    } @else {
+        color: $black;
+        text-shadow: 1px 1px 2px rgba($color: lighten($accent, 50%), $alpha: 1);
+    }
+    box-shadow: 1px 1px 2px rgba($color: $accent-darkest, $alpha: 0.5);
+    transition: background-color 500ms, border 500ms;
+    &:hover {
+        background-color: darken($accent, 5%);
+        border: darken($accent, 15%) solid 1px;
+    }
+}
+
+.button-primary {
+    @extend %button-primary;
+}
+
+.button-accent {
+    @extend %button-accent;
+}
+
+nav {
+    &.sans-footer-top-menu {
+        margin-bottom: 40px;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                a {
+                    @extend %button-accent;
+                }
+                &:first-of-type {
+                    a {
+                        @extend %button-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+%fields {
+    border-radius: 2px;
+    border: 1px $accent-lighter solid;
+    padding: 10px 5px;
+    margin: 5px 0 10px 0;
+}
+
+
+
+form {
+    label {
+        font-weight: 300;
+    }
+    
+    input {
+        &[type="text"], &[type="email"] {
+            @extend %fields;
+            width: 90%;
+        }
+        &[type="submit"] {
+            @extend %button-primary;
+            cursor: pointer;
+        }
+    }
+    
+    textarea {
+        @extend %fields;
+        width: 90%;
+    }
+}
+
+
+@media (min-width: $tablet-min) {
+    form {
+        input, textarea {
+            &[type="text"], &[type="email"] {
+                width: 600px;
+            }
+        }
+        textarea {
+            width: 600px;
+        }
+    }
+}
+
+

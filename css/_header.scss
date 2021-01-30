@@ -1,0 +1,186 @@
+.sans-header-image {
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sans-background-tint {
+    background: linear-gradient(rgba($color: $black, $alpha: 0.4),rgba($color: $black, $alpha: 0.1));
+}
+
+@media (max-width: $tablet-max) {
+    header {
+        nav.main-navigation {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 200ms;
+            position: absolute;
+            right: 0;
+            width: 100%;
+            background-color: $accent-lightest;
+            ul {
+                &.menu {
+                    opacity: 0;
+                    transition: opacity 100ms linear 200ms;
+                    margin: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+header {
+    .sans-top-bar {
+        background-color: rgba($white, 0.9);
+    }
+    .sans-top-brand, .sans-top-brand-home {
+        text-align: center;
+        background-color: rgba($white, 0.8);
+    }
+
+    .sans-top-brand, .sans-top-brand-home {
+        @include header-logo-size(80px);
+    }
+
+    .sans-main-menu {
+        text-align: right;
+        #sans-menu-toggle {
+            fill: $primary-darkest;
+            cursor: pointer;
+            margin: 0 10px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 7px 0;
+            a {
+                color: $primary-darker;
+                text-decoration: none;
+                transition: color 200ms;
+                &:hover {
+                    color: $primary-darkest;
+                }
+            }
+            li {
+                padding: 5px 0;
+                margin: 0 10px;
+            }
+        }
+        &.sans-top-menu {
+            ul {
+                display: flex;
+                a {
+                    font-weight: 500;
+                }
+            }
+            li {
+                &:first-child {
+                    margin: 0 10px 0 0;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+@media (min-width: $tablet-min) {
+    header {
+        .sans-main-menu {
+            #sans-menu-toggle {
+                display: none;
+            }
+        }
+
+        .sans-top-brand {
+            @include header-logo-size(80px);
+        }
+        .sans-top-brand-home {
+           @include header-logo-size(150px);
+        }
+    
+        nav.main-navigation {
+            ul {
+                &.menu {
+                    margin: 0;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: flex-end;
+                }
+            }
+            li {
+                &:last-child {
+                    margin: 0 0 0 10px;
+                }
+            }
+        }
+    }
+}
+
+#site-header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+}
+
+.translucent-faint-light {
+    background: linear-gradient(rgba($color: $white, $alpha: 0.1), rgba($color: $white, $alpha: 0.7));
+}
+
+.translucent-light {
+    background-color: rgba($color: $white, $alpha: 0.7);
+}
+
+#home-site-intro {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    background-color: $white;
+    
+    .site-name, .site-desc {
+        padding: 20px 0;
+        display: block;
+    }
+    .site-name {
+        font-size: 2em;
+        font-weight: 500;
+        color: $accent-darker;
+    }
+    .site-desc {
+        font-size: 2em;
+        font-weight: 300;
+        color: $primary-darkest;
+    }
+
+    #learn-more {
+        display: inline-block;
+        margin: auto 0 20px 0;
+        text-decoration: none;
+        transition: color 100ms;
+        text-transform: uppercase;
+        svg {
+            fill: $primary-darkest;
+            margin: 10px 0 10px 0;
+            width: 50px;
+            height: 25px;
+            transition: fill 100ms, margin 100ms;
+        }
+        &:hover {
+            color: $primary-darker;
+            svg {
+                fill: $primary-darker;
+                margin: 15px 0 5px 0;
+            }
+        }
+    }
+}

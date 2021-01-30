@@ -1,0 +1,47 @@
+%arch {
+    width: 100%;
+    background-position-x: center;
+    background-size: cover;
+}
+
+.arch-small {
+    @extend %arch;
+    height: 200px;
+}
+
+.arch {
+    @extend %arch;
+    height: 300px;
+}
+
+.arch-tall {
+    @extend %arch;
+    height: 400px;
+}
+
+.arch-header-home {
+    @extend %arch;
+    height: 300px;
+    margin-top: 100px;
+}
+
+.arch-footer {
+    height: 150px;
+    background-color: white;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    display: flex;
+    .footer-copyright {
+        color: white;
+        margin: auto auto 0 auto;
+    }
+}
+
+.arch-footer-content {
+    margin-top: -200px;
+}
+
+

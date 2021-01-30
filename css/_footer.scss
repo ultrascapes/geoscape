@@ -1,0 +1,38 @@
+footer {
+    text-align: center;
+    ul {
+        &.menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            li {
+                padding: 5px 0;
+                margin: 5px 10px;
+            }           
+        }
+        list-style: none;
+        padding: 0;
+        &.children {
+            font-size: 0.5em;
+        }
+    }
+    .custom-logo {
+        @include header-logo-size(80px);
+    }
+
+    .sans-footer-middle {
+        background-color: white;
+        padding: 20px 0;
+    }
+
+    .sans-footer-bottom{
+        background-color: white;
+        color: $accent-darker;
+        font-size: 0.8em;
+        margin-top: -5px;
+    }
+    .footer-copyright {
+        padding: 20px;
+    }
+}
