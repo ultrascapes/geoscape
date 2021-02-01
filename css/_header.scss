@@ -145,7 +145,7 @@ header {
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    background-color: $white;
+    background-color: rgba($color: $white, $alpha: 0.2);
     
     .site-name, .site-desc {
         padding: 20px 0;
