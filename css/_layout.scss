@@ -32,16 +32,18 @@ main {
     padding: 10px;
 }
 
-
-
 .sans-cont {
     margin: 0 auto;
     width: 94%;
 }
 
+.sans-cont-flx-ctr {
+    margin: auto;
+    width: 94%;
+}
 
 @media (min-width: 980px) {
-    .sans-cont {
+    .sans-cont, .sans-cont-flx-ctr {
         max-width: 980px;
     }
 }

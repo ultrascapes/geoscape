@@ -1,5 +1,12 @@
     <?php get_header('home'); ?>
-    <main id="home-main" role="main" class="sans-pg-fold-r2">
+    <main id="home-main" role="main" class="OFFsans-pg-fold-r2">
+        <section class="sans-100vh">
+            <div class="sans-cont">
+                <h2 class="sans-txt-ctr">ANNOUNCEMENTS</h2>
+    
+                <!-- TODO: Add two latest posts within an announcements category -->
+            </div>
+        </section>
         <section class="sans-row-bg-1">
             <div class="sans-cont sans-grd-cont">
                 <?php

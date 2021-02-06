@@ -19,10 +19,11 @@
                 </header>
             </div>
             <div id="home-site-intro">
-                <div class="site-name sans-cont"><?php bloginfo( 'name' ); ?>
+                <div class="sans-cont-flx-ctr">
+                    <div class="site-name"><?php bloginfo( 'name' ); ?></div>
+                    <div class="site-desc"><?php bloginfo( 'description' ); ?></div>  
                 </div>
-                <div class="site-desc sans-cont"><?php bloginfo( 'description' ); ?>
-                </div>   
+ 
                 <a id="learn-more" href="#home-main">
                     Learn More<br>
                     <svg class="sans-tri-dwn"><use href="#sans-tri-down"></use></svg>

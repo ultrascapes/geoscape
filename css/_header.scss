@@ -32,7 +32,8 @@
 
 header {
     .sans-top-bar {
-        background-color: rgba($white, 0.9);
+        background-color: $primary;
+
     }
     .sans-top-brand, .sans-top-brand-home {
         text-align: center;
@@ -60,11 +61,11 @@ header {
             padding: 0;
             margin: 7px 0;
             a {
-                color: $primary-darker;
+                color: $white;
                 text-decoration: none;
                 transition: color 200ms;
                 &:hover {
-                    color: $primary-darkest;
+                    color: rgba($white, 0.8);
                 }
             }
             li {
@@ -164,7 +165,7 @@ header {
 
     #learn-more {
         display: inline-block;
-        margin: auto 0 20px 0;
+        margin: 0 0 20px 0;
         text-decoration: none;
         transition: color 100ms;
         text-transform: uppercase;

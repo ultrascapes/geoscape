@@ -12,6 +12,14 @@ body {
   font-size: 16px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h2 {
+  padding: 1em 0;
+}
+
 h2, h3 {
   font-weight: 300;
   color: #004300;
@@ -84,8 +92,13 @@ main {
   width: 94%;
 }
 
+.sans-cont-flx-ctr {
+  margin: auto;
+  width: 94%;
+}
+
 @media (min-width: 980px) {
-  .sans-cont {
+  .sans-cont, .sans-cont-flx-ctr {
     max-width: 980px;
   }
 }
@@ -202,7 +215,7 @@ main {
 }
 
 header .sans-top-bar {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #008000;
 }
 
 header .sans-top-brand, header .sans-top-brand-home {
@@ -239,14 +252,14 @@ header nav ul {
 }
 
 header nav ul a {
-  color: #004300;
+  color: #ffffff;
   text-decoration: none;
   -webkit-transition: color 200ms;
   transition: color 200ms;
 }
 
 header nav ul a:hover {
-  color: #000100;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 header nav ul li {
@@ -353,7 +366,7 @@ header nav.sans-top-menu li:first-child {
 
 #home-site-intro #learn-more {
   display: inline-block;
-  margin: auto 0 20px 0;
+  margin: 0 0 20px 0;
   text-decoration: none;
   -webkit-transition: color 100ms;
   transition: color 100ms;
