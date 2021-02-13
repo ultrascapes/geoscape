@@ -20,7 +20,7 @@
             </div>
             <div id="home-site-intro">
                 <div class="sans-cont-flx-ctr">
-                    <div class="site-name"><?php bloginfo( 'name' ); ?></div>
+                    <div class="site-name"><h1><?php bloginfo( 'name' ); ?></h1></div>
                     <div class="site-desc"><?php bloginfo( 'description' ); ?></div>  
                 </div>
  

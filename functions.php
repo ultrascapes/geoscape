@@ -101,3 +101,40 @@ function geoscape_widgets_init() {
   }
   add_action( 'widgets_init', 'Geoscape_widgets_init' );
 
+
+  add_filter( 'excerpt_length', function($length) {
+    return 200;
+} );
+
+
+  function geoscape_announcements() {
+    $post_query = new WP_Query( array(
+      'category_name' => 'announcements',
+      'posts' => 2
+    ));
+
+    $content = '';
+
+    if ( $post_query->have_posts() ) {
+        $content .= '<h2 class="sans-txt-ctr">Announcements</h2>';
+        $content .= '<div class="sans-grd-cont">';
+        while ($post_query->have_posts()) {
+          $content .= '<div class="sans-post-card">';
+          $post_query->the_post();
+          if (has_post_thumbnail() ) {
+            $content .= '<a class="sans-post-thumbnail" href="'.get_the_permalink().'" rel="bookmark">'.get_the_post_thumbnail().'</a>';
+            $content .= '<h3 class="sans-post-title"><a href="'.get_the_permalink().'" rel="bookmark">'.get_the_title() .'</a></h3>';
+          } else {
+            $content .= '<h3 class="sans-post-title"><a href="'.get_the_permalink().'" rel="bookmark">'.get_the_title() .'</a></h3>';
+          }
+          $content .= '<div class="sans-post-excerpt">'.get_the_excerpt().'</div>';
+          $content .= '</div>';
+        }
+        $content .= '</div>';
+    }
+
+    return $content;
+
+    wp_reset_postdata();
+
+  }
