@@ -22,8 +22,25 @@ main {
 }
 
 .sans-row-bg-1 {
-    background-color:  $primary-lighter;
+    background-color: $neutral;
 }
+
+.sans-bg-blocks .sans-widget {
+    background-color: $neutral;
+}
+
+.sans-bg-blocks .sans-widget:nth-child(1) {
+    background-color: $neutral-1;
+}
+
+.sans-bg-blocks .sans-widget:nth-child(2) {
+    background-color: $neutral-2;
+}
+
+.sans-bg-blocks .sans-widget:nth-child(3) {
+    background-color: $neutral-3;
+}
+
 .sans-bkgd-pg {
     background-color: $white;
 }
@@ -42,9 +59,9 @@ main {
     width: 94%;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 1180px) {
     .sans-cont, .sans-cont-flx-ctr {
-        max-width: 980px;
+        max-width: 1180px;
     }
 }
 
@@ -59,7 +76,6 @@ main {
     .sans-grd-cont {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-        gap: 10px;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }

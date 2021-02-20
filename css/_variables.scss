@@ -1,7 +1,13 @@
 
 $primary: #008000 !default;
-$accent: #848484 !default;
-$neutral: #ececec !default;
+$accent: #5e616b !default;
+$neutral: #dddddd !default;
+//$neutral-1: #bcb7b6 !default;
+//$neutral-2: #f0e9dc !default;
+//$neutral-3: #ccc1b8 !default;
+$neutral-1: #cecbcb !default;
+$neutral-2: #e7e3dd !default;
+$neutral-3: #d5d0cc !default;
 $black: #010101 !default;
 $white: #ffffff !default;
 
@@ -14,8 +20,6 @@ $accent-lightest: lighten($accent, 60%);
 $accent-lighter: lighten($accent, 40%);
 $accent-darker: darken($accent, 7%);
 $accent-darkest: darken($accent, 15%);
-
-
 
 $tablet-max: 767px;
 $tablet-min: 768px;

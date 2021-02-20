@@ -9,7 +9,7 @@
             </div>
         </section>
         <section class="sans-row-bg-1">
-            <div class="sans-cont sans-grd-cont">
+            <div class="sans-cont sans-grd-cont sans-bg-blocks">
                 <?php
                 if ( is_active_sidebar( 'home-one' ) ) {
                     $widgets .= dynamic_sidebar( 'home-one' );
