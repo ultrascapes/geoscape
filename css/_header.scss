@@ -47,8 +47,9 @@ header {
     .sans-main-menu {
         text-align: right;
         #sans-menu-toggle {
-            fill: $primary-darkest;
+            color: $white;
             cursor: pointer;
+            content: "\f319";
             margin: 0 10px;
             width: 30px;
             height: 30px;

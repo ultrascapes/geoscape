@@ -26,6 +26,8 @@ main {
 }
 
 .sans-bg-blocks .sans-widget {
+    display: flex;
+    flex-direction: column;
     background-color: $neutral;
 }
 
@@ -62,13 +64,6 @@ main {
 @media (min-width: 1180px) {
     .sans-cont, .sans-cont-flx-ctr {
         max-width: 1180px;
-    }
-}
-
-
-.sans-grd-cont {
-    .sans-widget {
-        padding: 20px;
     }
 }
 

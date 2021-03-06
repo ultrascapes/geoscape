@@ -1,6 +1,21 @@
     <?php get_header('home'); ?>
     <main id="home-main" role="main" class="OFFsans-pg-fold-r2">
-        <section>
+        <section class="sans-row-bg-1">
+            <div class="sans-cont sans-grd-cont sans-bg-blocks">
+                <?php
+                if ( is_active_sidebar( 'home-one' ) ) {
+                    $widgets .= dynamic_sidebar( 'home-one' );
+                }
+                if ( is_active_sidebar( 'home-two' ) ) {
+                    $widgets .= dynamic_sidebar( 'home-two' );
+                }
+                if ( is_active_sidebar( 'home-three' ) ) {
+                    $widgets .= dynamic_sidebar( 'home-three' );
+                }
+                ?>
+            </div>
+        </section>
+        <section id="home-section-two">
             <div class="sans-cont">
                 <?php
                     $content = geoscape_announcements();
@@ -8,16 +23,13 @@
                 ?>
             </div>
         </section>
-        <section class="sans-row-bg-1">
-            <div class="sans-cont sans-grd-cont sans-bg-blocks">
-                <?php
-                if ( is_active_sidebar( 'home-one' ) ) {
-                    $widgets .= dynamic_sidebar( 'home-one' );
-                }
-                ?>
+        <section id="home-section-one" class="sans-pg-fold-r1">
+            <div class="sans-cont">
+                <h2>Section Title</h2>
+                <p>Section content goes here</p>
             </div>
         </section>
-        <section class="sans-bkgd-pg">
+        <section id="home-section-three" class="sans-bkgd-pg">
         <div class="sans-cont sans-pad-top-20" id="primary-home">
                 
                 <?php if ( have_posts()  ) : while ( have_posts() ) : the_post(); ?>

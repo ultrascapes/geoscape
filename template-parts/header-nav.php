@@ -9,7 +9,8 @@
                             ?>
                     </nav>
                     <div class="sans-main-menu">
-                        <svg onclick="OpenMenu();" id="sans-menu-toggle"><use href="#sans-menu-open"></use></svg>
+                    <span onclick="OpenMenu();" id="sans-menu-toggle" class="dashicons dashicons-menu-alt3"></span>
+                        <!--<svg onclick="OpenMenu();" id="sans-menu-toggle"><use href="#sans-menu-open"></use></svg>-->
                         <nav id="site-navigation" class="main-navigation" role="navigation">
                             <?php 
                                 $args = [

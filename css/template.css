@@ -10,6 +10,7 @@ body {
   font-weight: 400;
   color: #010101;
   font-size: 16px;
+  line-height: 24px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -80,6 +81,13 @@ main {
 }
 
 .sans-bg-blocks .sans-widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #dddddd;
 }
 
@@ -117,10 +125,6 @@ main {
   .sans-cont, .sans-cont-flx-ctr {
     max-width: 1180px;
   }
-}
-
-.sans-grd-cont .sans-widget {
-  padding: 20px;
 }
 
 @media (min-width: 980px) {
@@ -282,8 +286,9 @@ header .sans-main-menu {
 }
 
 header .sans-main-menu #sans-menu-toggle {
-  fill: #000100;
+  color: #ffffff;
   cursor: pointer;
+  content: "\f319";
   margin: 0 10px;
   width: 30px;
   height: 30px;
@@ -433,6 +438,42 @@ header nav.sans-top-menu li:first-child {
 #home-site-intro #learn-more:hover svg {
   fill: #004300;
   margin: 15px 0 5px 0;
+}
+
+.sans-widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sans-widget h3 {
+  padding: 20px;
+}
+
+.sans-widget > div {
+  padding: 20px;
+}
+
+.sans-widget .sans-widget-link {
+  margin-top: auto;
+  background-color: #008000;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 10px 10px 10px;
+  -webkit-transition: padding 100ms;
+  transition: padding 100ms;
+}
+
+.sans-widget .sans-widget-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 15px 10px 5px 10px;
 }
 
 .button-primary, nav.sans-footer-top-menu ul li:first-of-type a, form input[type="submit"], .button-accent, nav.sans-footer-top-menu ul li a {

@@ -65,7 +65,25 @@ function geoscape_widgets_init() {
       'id'            => 'home-one',
       'description'   => esc_html__( 'Add widgets for home page position one', 'Geoscape' ),
       'before_widget' => '<div class="sans-widget sans-txt-ctr">',
-      'after_widget'  => '</div>',
+      'after_widget'  => '<a class="sans-widget-link" href="#home-section-one"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    ]);  
+    register_sidebar([
+      'name'          => esc_html__( 'Home Two', 'Geoscape' ),
+      'id'            => 'home-two',
+      'description'   => esc_html__( 'Add widgets for home page position two', 'Geoscape' ),
+      'before_widget' => '<div class="sans-widget sans-txt-ctr">',
+      'after_widget'  => '<a class="sans-widget-link" href="#home-section-two"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    ]);  
+    register_sidebar([
+      'name'          => esc_html__( 'Home Three', 'Geoscape' ),
+      'id'            => 'home-three',
+      'description'   => esc_html__( 'Add widgets for home page position two', 'Geoscape' ),
+      'before_widget' => '<div class="sans-widget sans-txt-ctr">',
+      'after_widget'  => '<a class="sans-widget-link" href="#home-section-three"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>',
       'before_title'  => '<h3>',
       'after_title'   => '</h3>',
     ]);  
@@ -138,3 +156,9 @@ function geoscape_widgets_init() {
     wp_reset_postdata();
 
   }
+
+
+  function ww_load_dashicons(){
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'ww_load_dashicons');
