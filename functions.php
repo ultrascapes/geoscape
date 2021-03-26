@@ -64,8 +64,8 @@ function geoscape_widgets_init() {
       'name'          => esc_html__( 'Home One', 'Geoscape' ),
       'id'            => 'home-one',
       'description'   => esc_html__( 'Add widgets for home page position one', 'Geoscape' ),
-      'before_widget' => '<div class="sans-widget sans-txt-ctr">',
-      'after_widget'  => '<a class="sans-widget-link" href="#home-section-one"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>',
+      'before_widget' => '<div class="lyt-cont-1-3 sans-widget"><div class="sans-txt-ctr lyt-col">',
+      'after_widget'  => '<a class="sans-widget-link" href="#home-section-one"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
       'before_title'  => '<h3>',
       'after_title'   => '</h3>',
     ]);  
@@ -73,8 +73,8 @@ function geoscape_widgets_init() {
       'name'          => esc_html__( 'Home Two', 'Geoscape' ),
       'id'            => 'home-two',
       'description'   => esc_html__( 'Add widgets for home page position two', 'Geoscape' ),
-      'before_widget' => '<div class="sans-widget sans-txt-ctr">',
-      'after_widget'  => '<a class="sans-widget-link" href="#home-section-two"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>',
+      'before_widget' => '<div class="lyt-cont-2-3 sans-widget"><div class="sans-txt-ctr lyt-col">',
+      'after_widget'  => '<a class="sans-widget-link" href="#home-section-two"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
       'before_title'  => '<h3>',
       'after_title'   => '</h3>',
     ]);  
@@ -82,8 +82,8 @@ function geoscape_widgets_init() {
       'name'          => esc_html__( 'Home Three', 'Geoscape' ),
       'id'            => 'home-three',
       'description'   => esc_html__( 'Add widgets for home page position two', 'Geoscape' ),
-      'before_widget' => '<div class="sans-widget sans-txt-ctr">',
-      'after_widget'  => '<a class="sans-widget-link" href="#home-section-three"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>',
+      'before_widget' => '<div class="lyt-cont-3-3 sans-widget"><div class="sans-txt-ctr lyt-col">',
+      'after_widget'  => '<a class="sans-widget-link" href="#home-section-three"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
       'before_title'  => '<h3>',
       'after_title'   => '</h3>',
     ]);  
@@ -130,14 +130,16 @@ function geoscape_widgets_init() {
       'category_name' => 'announcements',
       'posts' => 2
     ));
-
     $content = '';
+    $col = 1;
 
     if ( $post_query->have_posts() ) {
         $content .= '<h2 class="sans-txt-ctr">Announcements</h2>';
-        $content .= '<div class="sans-grd-cont">';
+        $content .= '<div class="Offsans-grd-cont lyt-cont-grid-tablet">';
+        $content .= '<div class="lyt-cont-cols-2">';
         while ($post_query->have_posts()) {
-          $content .= '<div class="sans-post-card">';
+          $content .= '<div class="sans-post-card lyt-col-'.$col.'">';
+          $col ++;
           $post_query->the_post();
           if (has_post_thumbnail() ) {
             $content .= '<a class="sans-post-thumbnail" href="'.get_the_permalink().'" rel="bookmark">'.get_the_post_thumbnail().'</a>';
@@ -148,6 +150,7 @@ function geoscape_widgets_init() {
           $content .= '<div class="sans-post-excerpt">'.get_the_excerpt().'</div>';
           $content .= '</div>';
         }
+        $content .= '</div>';
         $content .= '</div>';
     }
 
