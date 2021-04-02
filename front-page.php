@@ -21,10 +21,12 @@
                 ?>
             </div>
         </section>
-        <section class="lyt-cont-grid-all">
-            <div class="lyt-col center">
-                <h3>Image widget</h3>
-            </div>
+        <section>
+                <?php
+                if ( is_active_sidebar( 'home-4' ) ) {
+                    $widgets .= dynamic_sidebar( 'home-4' );
+                }
+                ?>
         </section>
         <section id="home-section-three" class="lyt-cont-grid-tablet">
             <div class="lyt-cont-lg-1-2 sans-row-bg-1" id="primary-home">
@@ -47,14 +49,19 @@
         </section>
         <section class="lyt-cont-grid-tablet">
             <div class="bg-1 lyt-cont-sm-1-2">
-                <div class="lyt-col-sm">
-                    <h3>Image widget</h3>
-                </div>
+                    <?php
+                        if ( is_active_sidebar( 'home-5' ) ) {
+                            $widgets .= dynamic_sidebar( 'home-5' );
+                        }
+                    ?>
             </div>
             <div class="bg-2 lyt-cont-lg-2-2">
                 <div class="lyt-col-lg">
-                    <h3>Text widget</h3>
-                    <p>Website or company summary</p>
+                <?php
+                        if ( is_active_sidebar( 'home-6' ) ) {
+                            $widgets .= dynamic_sidebar( 'home-6' );
+                        }
+                    ?>
                 </div>
             </div>
         </section>
@@ -62,14 +69,18 @@
         <section class="lyt-cont-grid-tablet">
             <div class="bg-4 lyt-cont-lg-1-2">
                 <div class="lyt-col-lg">
-                    <h3>Feature blog posts</h3>
-                    <p>Display featured posts</p>
+                    <?php
+                        $content = geoscape_featured();
+                        echo($content);
+                    ?>
                 </div>
             </div>
             <div class="bg-6 lyt-cont-sm-2-2">
-                <div class="lyt-col-sm">
-                <h3>Image widget</h3>
-                </div>
+                    <?php
+                        if ( is_active_sidebar( 'home-7' ) ) {
+                            $widgets .= dynamic_sidebar( 'home-7' );
+                        }
+                    ?>
             </div>
         </section>
 

@@ -145,4 +145,29 @@ main {
     }
 }
 
+.sans-home-4 {
+    img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        margin-bottom: -10px;
+    }
+}
 
+.sans-home-5 {
+    grid-column: 1 / 5;
+    width: 100%;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.sans-home-7 {
+    grid-column: 1 / 5;
+    width: 100%;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}

@@ -89,6 +89,46 @@ function geoscape_widgets_init() {
     ]);  
 
     register_sidebar([
+      'name'          => esc_html__( 'Home 4', 'Geoscape' ),
+      'id'            => 'home-4',
+      'description'   => esc_html__( 'Full width image banner', 'Geoscape' ),
+      'before_widget' => '<div class="sans-home-4">',
+      'after_widget'  => '</div>',
+      'before_title'  => '',
+      'after_title'   => '',
+    ]);
+
+    register_sidebar([
+      'name'          => esc_html__( 'Home 5', 'Geoscape' ),
+      'id'            => 'home-5',
+      'description'   => esc_html__( 'Full width image banner', 'Geoscape' ),
+      'before_widget' => '<div class="sans-home-5">',
+      'after_widget'  => '</div>',
+      'before_title'  => '',
+      'after_title'   => '',
+    ]);
+
+    register_sidebar([
+      'name'          => esc_html__( 'Home 6', 'Geoscape' ),
+      'id'            => 'home-6',
+      'description'   => esc_html__( 'Full width image banner', 'Geoscape' ),
+      'before_widget' => '<div class="sans-home-6">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    ]);
+
+    register_sidebar([
+      'name'          => esc_html__( 'Home 7', 'Geoscape' ),
+      'id'            => 'home-7',
+      'description'   => esc_html__( 'Full width image banner', 'Geoscape' ),
+      'before_widget' => '<div class="sans-home-7">',
+      'after_widget'  => '</div>',
+      'before_title'  => '',
+      'after_title'   => '',
+    ]);
+
+    register_sidebar([
       'name'          => esc_html__( 'Footer Top', 'Geoscape' ),
       'id'            => 'footer-top',
       'description'   => esc_html__( 'Add widgets for the top of the home page', 'Geoscape' ),
@@ -96,7 +136,7 @@ function geoscape_widgets_init() {
       'after_widget'  => '</div>',
       'before_title'  => '<h3>',
       'after_title'   => '</h3>',
-    ]);  
+    ]);
 
     register_sidebar([
       'name'          => esc_html__( 'Posts Sidebar', 'Geoscape' ),
@@ -132,12 +172,11 @@ function geoscape_widgets_init() {
     ));
     $content = '';
     $col = 1;
-
-    if ( $post_query->have_posts() ) {
+    if ( $post_query->have_posts()) {
         $content .= '<h2 class="sans-txt-ctr">Announcements</h2>';
         $content .= '<div class="Offsans-grd-cont lyt-cont-grid-tablet">';
         $content .= '<div class="lyt-cont-cols-2">';
-        while ($post_query->have_posts()) {
+        while ($post_query->have_posts() && $col <= 2) {
           $content .= '<div class="sans-post-card lyt-col-'.$col.'">';
           $col ++;
           $post_query->the_post();
@@ -159,6 +198,37 @@ function geoscape_widgets_init() {
     wp_reset_postdata();
 
   }
+
+  function geoscape_featured() {
+    $post_query = new WP_Query( array(
+      'category_name' => 'featured',
+      'posts' => 3
+    ));
+    $content = '';
+    $count = 1;
+    if ( $post_query->have_posts() ) {
+        $content .= '<h2 class="sans-txt-ctr">Articles</h2>';
+        while ($post_query->have_posts() && $count <= 3) {
+          $content .= '<div>';
+          $post_query->the_post();
+          $content .= '<h3 class="sans-post-title"><a href="'.get_the_permalink().'" rel="bookmark">'.get_the_title() .'</a></h3>';
+          $excerpt = get_the_excerpt();
+          $excerpt = substr($excerpt, 0, 260);
+          $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
+          $excerpt = $excerpt . '...';
+          $content .= '<div class="sans-post-excerpt">'.$excerpt.'</div>';
+          $content .= '</div>';
+          $count ++;
+        }
+    }
+
+    return $content;
+
+    wp_reset_postdata();
+
+  }
+
+
 
 
   function ww_load_dashicons(){
