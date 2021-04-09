@@ -3,40 +3,49 @@ html {
 }
 
 body {
-    font-family: sans-serif;
-    background-color: $neutral;
+    background-color: $white;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight: 400;
-    color: $black;
-    font-size: 16px;
+    color: $dark-grey;
+}
+
+p {
+    font-size: 18px;
     line-height: 24px;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
     margin: 0;
+    font-weight: 400;
+    color: $dark-grey;
+    a {
+        color: $dark-grey;
+        text-decoration: none;
+    }
+}
+
+h1 {
+    font-size: 36px;
 }
 
 h2 {
-    padding: 1em 0;
+    font-size: 32px;
+    padding-top: 0;
+    padding-bottom: 10px;
 }
 
-h2, h3 {
-    font-weight: 300;
-    color: $accent-darkest;
-}
-
-h2 {
-    font-size: 1.7em;
-}
 h3 {
-    font-size: 1.5em;
-    font-weight: 500;
+    font-size: 26px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 
 a {
-    color: $primary-darkest;
+    color: $accent;
+    font-weight: 400;
     &:hover{
         text-decoration: none;
     }

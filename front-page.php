@@ -1,6 +1,6 @@
     <?php get_header('home'); ?>
-    <main id="home-main" role="main" class="OFFsans-pg-fold-r2">
-        <section class="Offsans-row-bg-1 lyt-cont-grid-desktop sans-bg-blocks">
+    <main id="home-main" role="main">
+        <section class="lyt-cont-grid-desktop sans-bg-blocks">
                 <?php
                 if ( is_active_sidebar( 'home-one' ) ) {
                     $widgets .= dynamic_sidebar( 'home-one' );
@@ -13,13 +13,11 @@
                 }
                 ?>
         </section>
-        <section id="offhome-section-two">
-            <div class="offsans-cont">
+        <section id="announcements">
                 <?php
                     $content = geoscape_announcements();
                     echo($content);
                 ?>
-            </div>
         </section>
         <section>
                 <?php
@@ -30,7 +28,7 @@
         </section>
         <section id="home-section-three" class="lyt-cont-grid-tablet">
             <div class="lyt-cont-lg-1-2 sans-row-bg-1" id="primary-home">
-                    <div class="lyt-col-lg">
+                    <div class="lyt-col-lg lyt-pad-vert-lg">
                     <?php if ( have_posts()  ) : while ( have_posts() ) : the_post(); ?>
                     
                         <?php get_template_part( '/template-parts/content', 'page' ); ?>
@@ -50,25 +48,28 @@
         <section class="lyt-cont-grid-tablet">
             <div class="bg-1 lyt-cont-sm-1-2">
                     <?php
+                    
                         if ( is_active_sidebar( 'home-5' ) ) {
                             $widgets .= dynamic_sidebar( 'home-5' );
                         }
+                        
                     ?>
             </div>
-            <div class="bg-2 lyt-cont-lg-2-2">
-                <div class="lyt-col-lg">
+            <div id="site-outline" class="lyt-cont-lg-2-2">
+                <div class="lyt-col-lg lyt-pad-vert-sm">
                 <?php
                         if ( is_active_sidebar( 'home-6' ) ) {
                             $widgets .= dynamic_sidebar( 'home-6' );
                         }
                     ?>
+                    
                 </div>
             </div>
         </section>
 
         <section class="lyt-cont-grid-tablet">
-            <div class="bg-4 lyt-cont-lg-1-2">
-                <div class="lyt-col-lg">
+            <div id="featured-articles" class="bg-4 lyt-cont-lg-1-2">
+                <div class="lyt-col-lg lyt-pad-vert-sm">
                     <?php
                         $content = geoscape_featured();
                         echo($content);
@@ -83,9 +84,7 @@
                     ?>
             </div>
         </section>
-
-        <small>front-page.php</small>
     </main>
        
-    <?php // get_footer(); ?>
+    <?php get_footer(); ?>
                 

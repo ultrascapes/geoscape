@@ -17,7 +17,6 @@ $args = array(
 );
 add_theme_support( 'custom-background', $args );
 
-
 add_theme_support( 'custom-header');
 
 
@@ -36,7 +35,7 @@ add_theme_support( 'starter-content' );
 // Load in CSS
 function geoscape_enqueue_styles() {
     //Change time() to version number when in production
-    wp_enqueue_style( 'google-font-css', "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,400&display=swap", [], '', 'all' );
+    wp_enqueue_style( 'google-font-css', "https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Condensed:wght@400;700&display=swap", [], '', 'all' );
     wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [], time(), 'all' ); 
     wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/css/template.css', ['google-font-css'], time(), 'all' ); 
 }
@@ -64,28 +63,28 @@ function geoscape_widgets_init() {
       'name'          => esc_html__( 'Home One', 'Geoscape' ),
       'id'            => 'home-one',
       'description'   => esc_html__( 'Add widgets for home page position one', 'Geoscape' ),
-      'before_widget' => '<div class="lyt-cont-1-3 sans-widget"><div class="sans-txt-ctr lyt-col">',
+      'before_widget' => '<div class="lyt-cont-1-3 sans-widget lyt-pad-vert-sm"><div class="sans-txt-ctr lyt-col">',
       'after_widget'  => '<a class="sans-widget-link" href="#home-section-one"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
-      'before_title'  => '<h3>',
-      'after_title'   => '</h3>',
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>',
     ]);  
     register_sidebar([
       'name'          => esc_html__( 'Home Two', 'Geoscape' ),
       'id'            => 'home-two',
       'description'   => esc_html__( 'Add widgets for home page position two', 'Geoscape' ),
-      'before_widget' => '<div class="lyt-cont-2-3 sans-widget"><div class="sans-txt-ctr lyt-col">',
+      'before_widget' => '<div class="lyt-cont-2-3 sans-widget lyt-pad-vert-sm"><div class="sans-txt-ctr lyt-col">',
       'after_widget'  => '<a class="sans-widget-link" href="#home-section-two"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
-      'before_title'  => '<h3>',
-      'after_title'   => '</h3>',
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>',
     ]);  
     register_sidebar([
       'name'          => esc_html__( 'Home Three', 'Geoscape' ),
       'id'            => 'home-three',
       'description'   => esc_html__( 'Add widgets for home page position two', 'Geoscape' ),
-      'before_widget' => '<div class="lyt-cont-3-3 sans-widget"><div class="sans-txt-ctr lyt-col">',
+      'before_widget' => '<div class="lyt-cont-3-3 sans-widget lyt-pad-vert-sm"><div class="sans-txt-ctr lyt-col">',
       'after_widget'  => '<a class="sans-widget-link" href="#home-section-three"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
-      'before_title'  => '<h3>',
-      'after_title'   => '</h3>',
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>',
     ]);  
 
     register_sidebar([
@@ -114,8 +113,8 @@ function geoscape_widgets_init() {
       'description'   => esc_html__( 'Full width image banner', 'Geoscape' ),
       'before_widget' => '<div class="sans-home-6">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h3>',
-      'after_title'   => '</h3>',
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>',
     ]);
 
     register_sidebar([
@@ -173,8 +172,9 @@ function geoscape_widgets_init() {
     $content = '';
     $col = 1;
     if ( $post_query->have_posts()) {
+      $content .= '<div class="lyt-pad-vert-med">';
         $content .= '<h2 class="sans-txt-ctr">Announcements</h2>';
-        $content .= '<div class="Offsans-grd-cont lyt-cont-grid-tablet">';
+        $content .= '<div class="lyt-cont-grid-tablet">';
         $content .= '<div class="lyt-cont-cols-2">';
         while ($post_query->have_posts() && $col <= 2) {
           $content .= '<div class="sans-post-card lyt-col-'.$col.'">';
@@ -186,9 +186,10 @@ function geoscape_widgets_init() {
           } else {
             $content .= '<h3 class="sans-post-title"><a href="'.get_the_permalink().'" rel="bookmark">'.get_the_title() .'</a></h3>';
           }
-          $content .= '<div class="sans-post-excerpt">'.get_the_excerpt().'</div>';
+          $content .= '<div class="sans-post-excerpt"><p>'.get_the_excerpt().'</p></div>';
           $content .= '</div>';
         }
+        $content .= '</div>';
         $content .= '</div>';
         $content .= '</div>';
     }
@@ -207,16 +208,17 @@ function geoscape_widgets_init() {
     $content = '';
     $count = 1;
     if ( $post_query->have_posts() ) {
-        $content .= '<h2 class="sans-txt-ctr">Articles</h2>';
+        $content .= '<h2>Featured Articles</h2>';
         while ($post_query->have_posts() && $count <= 3) {
-          $content .= '<div>';
+          $content .= '<div class="lyt-pad-vert-sm">';
           $post_query->the_post();
-          $content .= '<h3 class="sans-post-title"><a href="'.get_the_permalink().'" rel="bookmark">'.get_the_title() .'</a></h3>';
+          $content .= '<h3 class="sans-post-title"><a href="'.get_the_permalink().'">'.get_the_title() .'</a></h3>';
           $excerpt = get_the_excerpt();
           $excerpt = substr($excerpt, 0, 260);
           $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
           $excerpt = $excerpt . '...';
-          $content .= '<div class="sans-post-excerpt">'.$excerpt.'</div>';
+          $content .= '<div class="sans-post-excerpt"><p>'.$excerpt.'</p></div>';
+          $content .= '<a href="'.get_the_permalink().'">Read More</a>';
           $content .= '</div>';
           $count ++;
         }

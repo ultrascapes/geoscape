@@ -120,9 +120,9 @@ main {
 
 #primary-home {
     h1 {
-        font-size: 3em;
-        font-weight: 300;
-        color: $accent-darkest;
+        //font-size: 3em;
+        //font-weight: 300;
+        //color: $accent-darkest;
     } 
 }
 
@@ -157,9 +157,10 @@ main {
 .sans-home-5 {
     grid-column: 1 / 5;
     width: 100%;
+    background-color: aquamarine;
     img {
-        width: 100%;
         object-fit: cover;
+        height: 100% !important;
     }
 }
 
@@ -167,7 +168,19 @@ main {
     grid-column: 1 / 5;
     width: 100%;
     img {
-        width: 100%;
         object-fit: cover;
+        height: 100% !important;
     }
+}
+
+#site-outline {
+    background-color: $neutral-4;
+}
+
+#featured-articles {
+    background-color: $neutral-5;
+}
+
+footer {
+    background-color: $white;
 }
