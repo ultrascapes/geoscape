@@ -26,7 +26,7 @@
                 }
                 ?>
         </section>
-        <section id="home-section-three" class="lyt-cont-grid-tablet">
+        <section id="home-section-three" class="lyt-cont-grid-desktop">
             <div class="lyt-cont-lg-1-2 sans-row-bg-1" id="primary-home">
                     <div class="lyt-col-lg lyt-pad-vert-lg">
                     <?php if ( have_posts()  ) : while ( have_posts() ) : the_post(); ?>
@@ -42,10 +42,10 @@
                 </div>
                 <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
 
-            <div class="lyt-cont-sm-2-2" style="background: url('<?php echo $featured_image[0]; ?>') no-repeat; ">
+            <div class="lyt-cont-sm-2-2 sans-home-head-img" style="background: url('<?php echo $featured_image[0]; ?>') no-repeat; ">
             </div>
         </section>
-        <section class="lyt-cont-grid-tablet">
+        <section class="lyt-cont-grid-desktop">
             <div class="bg-1 lyt-cont-sm-1-2">
                     <?php
                     
@@ -67,7 +67,7 @@
             </div>
         </section>
 
-        <section class="lyt-cont-grid-tablet">
+        <section class="lyt-cont-grid-desktop">
             <div id="featured-articles" class="bg-4 lyt-cont-lg-1-2">
                 <div class="lyt-col-lg lyt-pad-vert-sm">
                     <?php

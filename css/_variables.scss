@@ -2,6 +2,8 @@
 $primary: #008000 !default;
 $accent: #004200 !default;
 $neutral: #dddddd !default;
+$neutral-darkest: #575757;
+$neutral-lightest: lighten($neutral, 12%);
 $neutral-1: #cecbcb !default;
 $neutral-2: #e7e3dd !default;
 $neutral-3: #d5d0cc !default;

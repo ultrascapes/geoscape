@@ -128,16 +128,6 @@ function geoscape_widgets_init() {
     ]);
 
     register_sidebar([
-      'name'          => esc_html__( 'Footer Top', 'Geoscape' ),
-      'id'            => 'footer-top',
-      'description'   => esc_html__( 'Add widgets for the top of the home page', 'Geoscape' ),
-      'before_widget' => '<div class="sans-txt-ctr">',
-      'after_widget'  => '</div>',
-      'before_title'  => '<h3>',
-      'after_title'   => '</h3>',
-    ]);
-
-    register_sidebar([
       'name'          => esc_html__( 'Posts Sidebar', 'Geoscape' ),
       'id'            => 'posts-sidebar',
       'description'   => esc_html__( 'Add widgets for sidebar on post feed and pages', 'Geoscape' ),
@@ -146,11 +136,32 @@ function geoscape_widgets_init() {
       'before_title'  => '<h3>',
       'after_title'   => '</h3>',
     ]);  
+
     register_sidebar([
-        'name'          => esc_html__( 'Footer Main', 'Geoscape' ),
-        'id'            => 'footer-main',
+      'name'          => esc_html__( 'Footer 1', 'Geoscape' ),
+      'id'            => 'footer-1',
+      'description'   => esc_html__( 'Add widgets for the top of the home page', 'Geoscape' ),
+      'before_widget' => '<div class="lyt-col-1">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    ]);
+
+    register_sidebar([
+        'name'          => esc_html__( 'Footer 2', 'Geoscape' ),
+        'id'            => 'footer-2',
         'description'   => esc_html__( 'Add widgets for Footer position one', 'Geoscape' ),
-        'before_widget' => '<div class="sans-widget">',
+        'before_widget' => '<div class="lyt-col-2">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+      ]);  
+
+      register_sidebar([
+        'name'          => esc_html__( 'Footer 3', 'Geoscape' ),
+        'id'            => 'footer-3',
+        'description'   => esc_html__( 'Add widgets for Footer position one', 'Geoscape' ),
+        'before_widget' => '<div class="lyt-col-3">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',

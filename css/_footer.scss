@@ -1,22 +1,27 @@
 footer {
     text-align: center;
-    ul {
-        &.menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 0;
-            li {
-                padding: 5px 0;
-                margin: 5px 10px;
-            }           
-        }
-        list-style: none;
-        padding: 0;
-        &.children {
-            font-size: 0.5em;
+    background-color: $neutral-lightest;
+    border-top: solid 2px $neutral-darkest;
+    .sans-footer-nav-bar {
+        ul {
+            &.menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0;
+                li {
+                    padding: 5px 0;
+                    margin: 5px 10px;
+                }           
+            }
+            list-style: none;
+            padding: 0;
+            &.children {
+                font-size: 0.5em;
+            }
         }
     }
+    
     .custom-logo {
         @include header-logo-size(80px);
     }
@@ -27,8 +32,8 @@ footer {
     }
 
     .sans-footer-bottom{
-        background-color: white;
-        color: $accent-darker;
+        background-color: $neutral-darkest;
+        color: $white;
         font-size: 0.8em;
         margin-top: -5px;
     }

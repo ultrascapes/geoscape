@@ -1129,8 +1129,8 @@ img {
 }
 
 .lyt-pad-vert-sm {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .lyt-pad-vert-med {
@@ -1326,12 +1326,24 @@ main {
   margin-bottom: -10px;
 }
 
+.sans-home-head-img {
+  min-height: 300px;
+  background-size: cover !important;
+  background-position: bottom right !important;
+}
+
+@media screen and (max-width: 979px) {
+  .sans-home-head-img {
+    background-attachment: fixed !important;
+  }
+}
+
 .sans-home-5 {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-column: 1 / 5;
+  -ms-grid-column-span: 12;
+  grid-column: 1 / 13;
   width: 100%;
-  background-color: aquamarine;
+  max-height: 300px;
 }
 
 .sans-home-5 img {
@@ -1342,9 +1354,10 @@ main {
 
 .sans-home-7 {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-column: 1 / 5;
+  -ms-grid-column-span: 12;
+  grid-column: 1 / 13;
   width: 100%;
+  max-height: 300px;
 }
 
 .sans-home-7 img {
@@ -1353,16 +1366,21 @@ main {
   height: 100% !important;
 }
 
+@media screen and (min-width: 980px) {
+  .sans-home-5, .sans-home-7 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / 5;
+    max-height: 100%;
+  }
+}
+
 #site-outline {
   background-color: #d7d8d2;
 }
 
 #featured-articles {
   background-color: #f5f5f2;
-}
-
-footer {
-  background-color: #ffffff;
 }
 
 .sans-header-image {
@@ -1694,14 +1712,16 @@ form textarea {
 
 footer {
   text-align: center;
+  background-color: #fcfcfc;
+  border-top: solid 2px #575757;
 }
 
-footer ul {
+footer .sans-footer-nav-bar ul {
   list-style: none;
   padding: 0;
 }
 
-footer ul.menu {
+footer .sans-footer-nav-bar ul.menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1713,12 +1733,12 @@ footer ul.menu {
   margin: 0;
 }
 
-footer ul.menu li {
+footer .sans-footer-nav-bar ul.menu li {
   padding: 5px 0;
   margin: 5px 10px;
 }
 
-footer ul.children {
+footer .sans-footer-nav-bar ul.children {
   font-size: 0.5em;
 }
 
@@ -1738,8 +1758,8 @@ footer .sans-footer-middle {
 }
 
 footer .sans-footer-bottom {
-  background-color: white;
-  color: #001e00;
+  background-color: #575757;
+  color: #ffffff;
   font-size: 0.8em;
   margin-top: -5px;
 }
