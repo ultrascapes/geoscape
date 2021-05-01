@@ -22,6 +22,14 @@
                 <div class="sans-cont-flx-ctr">
                     <div class="site-name"><h1><?php bloginfo( 'name' ); ?></h1></div>
                     <div class="site-desc"><?php bloginfo( 'description' ); ?></div>  
+                    <?php
+                    //TODO convert to background video
+                        $video_id = get_theme_mod('home_header_video');
+                        $video_url = wp_get_attachment_url($video_id);
+                    ?>
+                    <video width="320" height="240" controls>
+                        <source src="<?php echo($video_url); ?>" type="video/mp4">
+                    </video>
                 </div>
  
                 <a id="learn-more" href="#home-main">

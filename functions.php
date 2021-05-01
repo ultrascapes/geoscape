@@ -247,4 +247,54 @@ function geoscape_widgets_init() {
   function ww_load_dashicons(){
     wp_enqueue_style('dashicons');
 }
+
 add_action('wp_enqueue_scripts', 'ww_load_dashicons');
+
+//require get_stylesheet_directory() . '/inc/theme-customization.php';
+//new geoscape_custom();
+
+function geoscape_customize_register($wp_customize) {
+  $wp_customize->add_section('home-header', array(
+    'title' => __('Home Header', 'geoscape'),
+    'description' => sprintf(__('Options for homepage header', 'geoscape')),
+    'priority' => 130
+  ));
+
+  $wp_customize->add_setting('main_heading', array(
+    'default' => _x('Main Heading', 'geoscape'),
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control('main_heading', array(
+    'label' => __('Heading', 'geoscape'),
+    'section' => 'home-header',
+    'priority' => 20
+  ));
+
+  $wp_customize->add_setting('home_header_image', array(
+    'default' => '',
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'home_header_image', array(
+    'label' => __('Background Image', 'geoscape'),
+    'section' => 'home-header',
+    'settings' => 'home_header_image'
+  )));
+
+
+  $wp_customize->add_setting('home_header_video', array(
+    'default' => '',
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'home_header_video', array(
+    'label' => __('Background Video', 'geoscape'),
+    'section' => 'home-header',
+    'settings' => 'home_header_video'
+  )));
+  
+
+}
+
+add_action( 'customize_register', 'geoscape_customize_register');
