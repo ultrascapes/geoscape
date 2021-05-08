@@ -37,7 +37,7 @@ header {
     }
     .sans-top-brand, .sans-top-brand-home {
         text-align: center;
-        background-color: rgba($white, 0.8);
+        background-color: $white;
     }
 
     .sans-top-brand, .sans-top-brand-home {
@@ -96,6 +96,7 @@ header {
 
 @media (min-width: $tablet-min) {
     header {
+        position: sticky;
         .sans-main-menu {
             #sans-menu-toggle {
                 display: none;
@@ -106,7 +107,7 @@ header {
             @include header-logo-size(80px);
         }
         .sans-top-brand-home {
-           @include header-logo-size(150px);
+           @include header-logo-size(80px);
         }
     
         nav.main-navigation {
@@ -147,7 +148,7 @@ header {
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    background-color: rgba($color: $white, $alpha: 0.2);
+    background-color: rgba($color: $black, $alpha: 0.2);
     
     .site-name, .site-desc {
         padding: 20px 0;
@@ -185,4 +186,12 @@ header {
             }
         }
     }
+}
+
+
+#home-video-header {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: 100%;
 }

@@ -1318,12 +1318,13 @@ main {
   margin-bottom: 20px;
 }
 
-.sans-home-4 img {
+.sans-page-header {
   width: 100%;
-  max-height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-bottom: -10px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .sans-home-head-img {
@@ -1338,18 +1339,9 @@ main {
   }
 }
 
-.sans-home-5 {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1 / 13;
-  width: 100%;
-  max-height: 300px;
-}
-
-.sans-home-5 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100% !important;
+#site-outline-image {
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .sans-home-7 {
@@ -1419,7 +1411,7 @@ header .sans-top-bar {
 
 header .sans-top-brand, header .sans-top-brand-home {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #ffffff;
 }
 
 header .sans-top-brand, header .sans-top-brand-home {
@@ -1482,6 +1474,10 @@ header nav.sans-top-menu li:first-child {
 }
 
 @media (min-width: 768px) {
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+  }
   header .sans-main-menu #sans-menu-toggle {
     display: none;
   }
@@ -1494,11 +1490,11 @@ header nav.sans-top-menu li:first-child {
     width: auto;
   }
   header .sans-top-brand-home {
-    height: 160px;
+    height: 90px;
   }
   header .sans-top-brand-home .custom-logo {
     margin: 5px 0;
-    height: 150px;
+    height: 80px;
     width: auto;
   }
   header nav.main-navigation ul.menu {
@@ -1544,7 +1540,7 @@ header nav.sans-top-menu li:first-child {
           flex-direction: column;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(1, 1, 1, 0.2);
 }
 
 #home-site-intro .site-name, #home-site-intro .site-desc {
@@ -1589,6 +1585,13 @@ header nav.sans-top-menu li:first-child {
 #home-site-intro #learn-more:hover svg {
   fill: #004300;
   margin: 15px 0 5px 0;
+}
+
+#home-video-header {
+  position: fixed;
+  z-index: -1;
+  width: auto;
+  height: 100%;
 }
 
 .sans-widget {

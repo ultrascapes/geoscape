@@ -19,13 +19,12 @@
                     echo($content);
                 ?>
         </section>
-        <section>
-                <?php
-                if ( is_active_sidebar( 'home-4' ) ) {
-                    $widgets .= dynamic_sidebar( 'home-4' );
-                }
-                ?>
-        </section>
+        <div class="sans-page-header"
+        <?php if ( get_header_image()) : ?>
+                style="background-image: url('<?php header_image(); ?>');"
+            <?php endif; ?>
+        >
+        </div>
         <section id="home-section-three" class="lyt-cont-grid-desktop">
             <div class="lyt-cont-lg-1-2 sans-row-bg-1" id="primary-home">
                     <div class="lyt-col-lg lyt-pad-vert-lg">
@@ -46,15 +45,7 @@
             </div>
         </section>
         <section class="lyt-cont-grid-desktop">
-            <div class="bg-1 lyt-cont-sm-1-2">
-                    <?php
-                    
-                        if ( is_active_sidebar( 'home-5' ) ) {
-                            $widgets .= dynamic_sidebar( 'home-5' );
-                        }
-                        
-                    ?>
-            </div>
+            <div id="site-outline-image" class="bg-1 lyt-cont-sm-1-2" style="background-image: url('<?php echo get_theme_mod('home_site_overview_image'); ?>');"></div>
             <div id="site-outline" class="lyt-cont-lg-2-2">
                 <div class="lyt-col-lg lyt-pad-vert-sm">
                 <?php
