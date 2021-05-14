@@ -11,10 +11,11 @@
                     $video_id = get_theme_mod('home_header_video');
                     $video_url = wp_get_attachment_url($video_id);
                 ?>
-                
+               
                 <video id="home-video-header" poster="<?php echo($video_poster); ?>" autoplay muted loop>
                     <source src="<?php echo($video_url); ?>" type="video/mp4">
                 </video>
+              
             <div class="sans-background-tint">
                 <header id="masthead" role="banner">
                     <?php get_template_part( '/template-parts/header', 'nav' ); ?>

@@ -60,27 +60,27 @@ register_nav_menus( [
 // Setup Widget Areas
 function geoscape_widgets_init() {
     register_sidebar([
-      'name'          => esc_html__( 'Home One', 'Geoscape' ),
+      'name'          => esc_html__( 'Home Intro 1', 'Geoscape' ),
       'id'            => 'home-one',
-      'description'   => esc_html__( 'Add widgets for home page position one', 'Geoscape' ),
+      'description'   => esc_html__( 'Introduction with anchor link down to section 1 of the home page.', 'Geoscape' ),
       'before_widget' => '<div class="lyt-cont-1-3 sans-widget lyt-pad-vert-sm"><div class="sans-txt-ctr lyt-col">',
       'after_widget'  => '<a class="sans-widget-link" href="#home-section-one"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
       'before_title'  => '<h2>',
       'after_title'   => '</h2>',
     ]);  
     register_sidebar([
-      'name'          => esc_html__( 'Home Two', 'Geoscape' ),
+      'name'          => esc_html__( 'Home Intro 2', 'Geoscape' ),
       'id'            => 'home-two',
-      'description'   => esc_html__( 'Add widgets for home page position two', 'Geoscape' ),
+      'description'   => esc_html__( 'Introduction with anchor link down to section 2 of the home page.', 'Geoscape' ),
       'before_widget' => '<div class="lyt-cont-2-3 sans-widget lyt-pad-vert-sm"><div class="sans-txt-ctr lyt-col">',
       'after_widget'  => '<a class="sans-widget-link" href="#home-section-two"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
       'before_title'  => '<h2>',
       'after_title'   => '</h2>',
     ]);  
     register_sidebar([
-      'name'          => esc_html__( 'Home Three', 'Geoscape' ),
+      'name'          => esc_html__( 'Home Intro 3', 'Geoscape' ),
       'id'            => 'home-three',
-      'description'   => esc_html__( 'Add widgets for home page position two', 'Geoscape' ),
+      'description'   => esc_html__( 'Introduction with anchor link down to section 3 of the home page.', 'Geoscape' ),
       'before_widget' => '<div class="lyt-cont-3-3 sans-widget lyt-pad-vert-sm"><div class="sans-txt-ctr lyt-col">',
       'after_widget'  => '<a class="sans-widget-link" href="#home-section-three"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div></div>',
       'before_title'  => '<h2>',
@@ -88,23 +88,13 @@ function geoscape_widgets_init() {
     ]);  
 
     register_sidebar([
-      'name'          => esc_html__( 'Home 6', 'Geoscape' ),
-      'id'            => 'home-6',
-      'description'   => esc_html__( 'Full width image banner', 'Geoscape' ),
+      'name'          => esc_html__( 'Home Site Overview', 'Geoscape' ),
+      'id'            => 'home-site-overview',
+      'description'   => esc_html__( 'Summary of the main sections of the website.', 'Geoscape' ),
       'before_widget' => '<div class="sans-home-6">',
       'after_widget'  => '</div>',
       'before_title'  => '<h2>',
       'after_title'   => '</h2>',
-    ]);
-
-    register_sidebar([
-      'name'          => esc_html__( 'Home 7', 'Geoscape' ),
-      'id'            => 'home-7',
-      'description'   => esc_html__( 'Full width image banner', 'Geoscape' ),
-      'before_widget' => '<div class="sans-home-7">',
-      'after_widget'  => '</div>',
-      'before_title'  => '',
-      'after_title'   => '',
     ]);
 
     register_sidebar([
@@ -157,7 +147,7 @@ function geoscape_widgets_init() {
 
   function geoscape_announcements() {
     $post_query = new WP_Query( array(
-      'category_name' => 'announcements',
+      'category_name' => 'Announcements',
       'posts' => 2
     ));
     $content = '';
@@ -193,7 +183,7 @@ function geoscape_widgets_init() {
 
   function geoscape_featured() {
     $post_query = new WP_Query( array(
-      'category_name' => 'featured',
+      'category_name' => 'Featured',
       'posts' => 3
     ));
     $content = '';
@@ -230,25 +220,11 @@ function geoscape_widgets_init() {
 
 add_action('wp_enqueue_scripts', 'ww_load_dashicons');
 
-//require get_stylesheet_directory() . '/inc/theme-customization.php';
-//new geoscape_custom();
-
 function geoscape_customize_register($wp_customize) {
-  $wp_customize->add_section('home-content', array(
-    'title' => __('Homepage Content', 'geoscape'),
+  $wp_customize->add_section('home-video-header', array(
+    'title' => __('Home Video Header', 'geoscape'),
     'description' => sprintf(__('Options for homepage header', 'geoscape')),
     'priority' => 130
-  ));
-
-  $wp_customize->add_setting('main_heading', array(
-    'default' => _x('Main Heading', 'geoscape'),
-    'type' => 'theme_mod'
-  ));
-
-  $wp_customize->add_control('main_heading', array(
-    'label' => __('Heading', 'geoscape'),
-    'section' => 'home-content',
-    'priority' => 20
   ));
 
   $wp_customize->add_setting('home_header_poster', array(
@@ -257,8 +233,8 @@ function geoscape_customize_register($wp_customize) {
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'home_header_poster', array(
-    'label' => __('Background Video Poster Image', 'geoscape'),
-    'section' => 'home-content',
+    'label' => __('Video Poster Image', 'geoscape'),
+    'section' => 'home-video-header',
     'settings' => 'home_header_poster'
   )));
 
@@ -270,19 +246,36 @@ function geoscape_customize_register($wp_customize) {
 
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'home_header_video', array(
     'label' => __('Background Video', 'geoscape'),
-    'section' => 'home-content',
+    'section' => 'home-video-header',
     'settings' => 'home_header_video'
   )));
 
-  $wp_customize->add_setting('home_site_overview_image', array(
+  $wp_customize->add_section('home-sections-images', array(
+    'title' => __('Home Sections Images', 'geoscape'),
+    'description' => sprintf(__('Options for homepage header', 'geoscape')),
+    'priority' => 140
+  ));
+
+  $wp_customize->add_setting('site_overview_image', array(
     'default' => '',
     'type' => 'theme_mod'
   ));
 
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'home_site_overview_image', array(
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'site_overview_image', array(
     'label' => __('Website Overview Image', 'geoscape'),
-    'section' => 'home-content',
-    'settings' => 'home_site_overview_image'
+    'section' => 'home-sections-images',
+    'settings' => 'site_overview_image'
+  )));
+
+  $wp_customize->add_setting('featured_articles_image', array(
+    'default' => '',
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'featured_articles_image', array(
+    'label' => __('Website Featured Articles', 'geoscape'),
+    'section' => 'home-sections-images',
+    'settings' => 'featured_articles_image'
   )));
   
 

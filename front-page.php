@@ -24,6 +24,7 @@
                 style="background-image: url('<?php header_image(); ?>');"
             <?php endif; ?>
         >
+        <div class="san-fade-background"></div>
         </div>
         <section id="home-section-three" class="lyt-cont-grid-desktop">
             <div class="lyt-cont-lg-1-2 sans-row-bg-1" id="primary-home">
@@ -45,12 +46,12 @@
             </div>
         </section>
         <section class="lyt-cont-grid-desktop">
-            <div id="site-outline-image" class="bg-1 lyt-cont-sm-1-2" style="background-image: url('<?php echo get_theme_mod('home_site_overview_image'); ?>');"></div>
+            <div id="site-outline-image" class="bg-1 lyt-cont-sm-1-2" style="background-image: url('<?php echo get_theme_mod('site_overview_image'); ?>');"></div>
             <div id="site-outline" class="lyt-cont-lg-2-2">
                 <div class="lyt-col-lg lyt-pad-vert-sm">
                 <?php
-                        if ( is_active_sidebar( 'home-6' ) ) {
-                            $widgets .= dynamic_sidebar( 'home-6' );
+                        if ( is_active_sidebar( 'home-site-overview' ) ) {
+                            $widgets .= dynamic_sidebar( 'home-site-overview' );
                         }
                     ?>
                     
@@ -67,12 +68,7 @@
                     ?>
                 </div>
             </div>
-            <div class="bg-6 lyt-cont-sm-2-2">
-                    <?php
-                        if ( is_active_sidebar( 'home-7' ) ) {
-                            $widgets .= dynamic_sidebar( 'home-7' );
-                        }
-                    ?>
+            <div id="featured-articles-image" class="bg-6 lyt-cont-sm-2-2" style="background-image: url('<?php echo get_theme_mod('featured_articles_image'); ?>');">
             </div>
         </section>
     </main>

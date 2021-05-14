@@ -1339,23 +1339,11 @@ main {
   }
 }
 
-#site-outline-image {
+#site-outline-image, #featured-articles-image {
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.sans-home-7 {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1 / 13;
-  width: 100%;
-  max-height: 300px;
-}
-
-.sans-home-7 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100% !important;
+  background-position: center center;
+  min-height: 400px;
 }
 
 @media screen and (min-width: 980px) {
@@ -1395,7 +1383,7 @@ main {
     position: absolute;
     right: 0;
     width: 100%;
-    background-color: #75ff75;
+    background-color: #008000;
   }
   header nav.main-navigation ul.menu {
     opacity: 0;
@@ -1433,8 +1421,6 @@ header .sans-main-menu #sans-menu-toggle {
   cursor: pointer;
   content: "\f319";
   margin: 0 10px;
-  width: 30px;
-  height: 30px;
 }
 
 header nav ul {
@@ -1457,6 +1443,7 @@ header nav ul a:hover {
 header nav ul li {
   padding: 5px 0;
   margin: 0 10px;
+  font-size: 1.2em;
 }
 
 header nav.sans-top-menu ul {
@@ -1540,7 +1527,8 @@ header nav.sans-top-menu li:first-child {
           flex-direction: column;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
-  background-color: rgba(1, 1, 1, 0.2);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 56, 56, 0.6)), color-stop(rgba(56, 56, 56, 0.75)), to(rgba(56, 56, 56, 0.99)));
+  background: linear-gradient(rgba(56, 56, 56, 0.6), rgba(56, 56, 56, 0.75), rgba(56, 56, 56, 0.99));
 }
 
 #home-site-intro .site-name, #home-site-intro .site-desc {
@@ -1551,13 +1539,19 @@ header nav.sans-top-menu li:first-child {
 #home-site-intro .site-name {
   font-size: 2em;
   font-weight: 500;
-  color: #001e00;
+  color: #ffffff;
+}
+
+#home-site-intro .site-name h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #010101;
 }
 
 #home-site-intro .site-desc {
   font-size: 2em;
   font-weight: 300;
-  color: #000100;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #010101;
 }
 
 #home-site-intro #learn-more {
@@ -1567,10 +1561,11 @@ header nav.sans-top-menu li:first-child {
   -webkit-transition: color 100ms;
   transition: color 100ms;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #home-site-intro #learn-more svg {
-  fill: #000100;
+  fill: rgba(255, 255, 255, 0.7);
   margin: 10px 0 10px 0;
   width: 50px;
   height: 25px;
@@ -1579,11 +1574,11 @@ header nav.sans-top-menu li:first-child {
 }
 
 #home-site-intro #learn-more:hover {
-  color: #004300;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 #home-site-intro #learn-more:hover svg {
-  fill: #004300;
+  fill: rgba(255, 255, 255, 0.95);
   margin: 15px 0 5px 0;
 }
 
@@ -1591,6 +1586,12 @@ header nav.sans-top-menu li:first-child {
   position: fixed;
   z-index: -1;
   width: auto;
+  min-height: 100%;
+}
+
+.san-fade-background {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 56, 56, 0.1)), to(rgba(56, 56, 56, 0.9)));
+  background: linear-gradient(rgba(56, 56, 56, 0.1), rgba(56, 56, 56, 0.9));
   height: 100%;
 }
 

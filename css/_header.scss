@@ -17,7 +17,7 @@
             position: absolute;
             right: 0;
             width: 100%;
-            background-color: $accent-lightest;
+            background-color: $primary;
             ul {
                 &.menu {
                     opacity: 0;
@@ -51,8 +51,6 @@ header {
             cursor: pointer;
             content: "\f319";
             margin: 0 10px;
-            width: 30px;
-            height: 30px;
         }
     }
 
@@ -72,6 +70,7 @@ header {
             li {
                 padding: 5px 0;
                 margin: 0 10px;
+                font-size: 1.2em;
             }
         }
         &.sans-top-menu {
@@ -148,7 +147,8 @@ header {
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    background-color: rgba($color: $black, $alpha: 0.2);
+    //background-color: rgba($color: $black, $alpha: 0.75);
+    background: linear-gradient(rgba($color: $dark-grey, $alpha: 0.6), rgba($color: $dark-grey, $alpha: 0.75), rgba($color: $dark-grey, $alpha: 0.99));
     
     .site-name, .site-desc {
         padding: 20px 0;
@@ -157,12 +157,17 @@ header {
     .site-name {
         font-size: 2em;
         font-weight: 500;
-        color: $accent-darker;
+        color: $white;
+        h1 {
+            color: $white;
+            text-shadow: 2px 2px 5px $black;
+        }
     }
     .site-desc {
         font-size: 2em;
         font-weight: 300;
-        color: $primary-darkest;
+        color: $white;
+        text-shadow: 2px 2px 5px $black;
     }
 
     #learn-more {
@@ -171,17 +176,18 @@ header {
         text-decoration: none;
         transition: color 100ms;
         text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
         svg {
-            fill: $primary-darkest;
+            fill: rgba($color: $white, $alpha: 0.7);
             margin: 10px 0 10px 0;
             width: 50px;
             height: 25px;
             transition: fill 100ms, margin 100ms;
         }
         &:hover {
-            color: $primary-darker;
+            color: rgba($color: $white, $alpha: 0.95);
             svg {
-                fill: $primary-darker;
+                fill: rgba($color: $white, $alpha: 0.95);
                 margin: 15px 0 5px 0;
             }
         }
@@ -193,5 +199,10 @@ header {
     position: fixed;
     z-index: -1;
     width: auto;
+    min-height: 100%;
+}
+
+.san-fade-background {
+    background: linear-gradient(rgba($color: $dark-grey, $alpha: 0.1), rgba($color: $dark-grey, $alpha: 0.9));
     height: 100%;
 }
