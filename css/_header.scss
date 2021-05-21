@@ -33,7 +33,7 @@
 header {
     .sans-top-bar {
         background-color: $primary;
-
+        height: 50px;
     }
     .sans-top-brand, .sans-top-brand-home {
         text-align: center;
@@ -70,7 +70,7 @@ header {
             li {
                 padding: 5px 0;
                 margin: 0 10px;
-                font-size: 1.2em;
+                font-size: 20px;
             }
         }
         &.sans-top-menu {
@@ -122,6 +122,31 @@ header {
                 &:last-child {
                     margin: 0 0 0 10px;
                 }
+                &.menu-item-has-children {
+                    cursor: pointer;
+                    &:focus-within {
+                        .sub-menu {
+                            visibility: visible;
+                        }
+                    }
+                    &:hover {
+                        .sub-menu {
+                            visibility: visible;
+                        }
+                        &:focus-within {
+                            visibility: visible;
+                        }
+                    }
+                }
+     
+      
+            }
+            .sub-menu {
+                background-color: $primary;
+                position: absolute;
+                z-index: 1000;
+                top: 40px;
+                visibility: hidden;
             }
         }
     }

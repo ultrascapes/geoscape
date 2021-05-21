@@ -53,7 +53,6 @@ add_action( 'wp_enqueue_scripts', 'geoscape_enqueue_scripts');
 register_nav_menus( [
     'top-menu' => esc_html__( 'Top Menu', 'geoscape' ),
     'main-menu' => esc_html__( 'Main Menu', 'geoscape' ),
-    'footer-top-menu' => esc_html__( 'Footer Top Menu', 'geoscape' ),
     'footer-main-menu' => esc_html__( 'Footer Main Menu', 'geoscape' )
 ]);
 

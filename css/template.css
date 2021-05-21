@@ -1395,6 +1395,7 @@ main {
 
 header .sans-top-bar {
   background-color: #008000;
+  height: 50px;
 }
 
 header .sans-top-brand, header .sans-top-brand-home {
@@ -1443,7 +1444,7 @@ header nav ul a:hover {
 header nav ul li {
   padding: 5px 0;
   margin: 0 10px;
-  font-size: 1.2em;
+  font-size: 20px;
 }
 
 header nav.sans-top-menu ul {
@@ -1497,6 +1498,25 @@ header nav.sans-top-menu li:first-child {
   }
   header nav.main-navigation li:last-child {
     margin: 0 0 0 10px;
+  }
+  header nav.main-navigation li.menu-item-has-children {
+    cursor: pointer;
+  }
+  header nav.main-navigation li.menu-item-has-children:focus-within .sub-menu {
+    visibility: visible;
+  }
+  header nav.main-navigation li.menu-item-has-children:hover .sub-menu {
+    visibility: visible;
+  }
+  header nav.main-navigation li.menu-item-has-children:hover:focus-within {
+    visibility: visible;
+  }
+  header nav.main-navigation .sub-menu {
+    background-color: #008000;
+    position: absolute;
+    z-index: 1000;
+    top: 40px;
+    visibility: hidden;
   }
 }
 
