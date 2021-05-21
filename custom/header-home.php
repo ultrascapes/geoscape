@@ -5,8 +5,6 @@
             <?php endif; ?>
             >
             <?php
-            //TODO mobile browsers to not download or play the video
-            //TODO Address video width on wide screens with a small height
                     $video_poster = get_theme_mod('home_header_poster');
                     $video_id = get_theme_mod('home_header_video');
                     $video_url = wp_get_attachment_url($video_id);

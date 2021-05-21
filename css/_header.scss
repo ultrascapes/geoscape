@@ -112,7 +112,6 @@ header {
         nav.main-navigation {
             ul {
                 &.menu {
-                    margin: 0;
                     display: flex;
                     flex-wrap: nowrap;
                     justify-content: flex-end;
@@ -126,15 +125,12 @@ header {
                     cursor: pointer;
                     &:focus-within {
                         .sub-menu {
-                            visibility: visible;
+                            display: block;
                         }
                     }
                     &:hover {
                         .sub-menu {
-                            visibility: visible;
-                        }
-                        &:focus-within {
-                            visibility: visible;
+                            display: block;
                         }
                     }
                 }
@@ -146,7 +142,14 @@ header {
                 position: absolute;
                 z-index: 1000;
                 top: 40px;
-                visibility: hidden;
+                padding: 10px;
+                margin: 0;                
+                display: none;
+                text-align: left;
+                li {
+                    margin: 0 10px;
+                    padding: 10px;
+                }
             }
         }
     }

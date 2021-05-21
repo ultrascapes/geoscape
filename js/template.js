@@ -17,9 +17,18 @@ function OpenMenu() {
     
 }
 
-//element.addEventListener("click", function(){ alert("Hello World!"); });
-
 document.querySelector("#learn-more").addEventListener("click", function(e) {
-
     this.style.display = "none";
 });
+
+
+
+const menuParentLinks = document.querySelectorAll('.menu-item-has-children > a');
+
+Array.prototype.forEach.call(menuParentLinks, menuParentLink => {
+    menuParentLink.outerHTML = `<button data-link="${menuParentLink.href}">${menuParentLink.textContent}</button>`;
+    let menuParentButton = document.querySelector('[data-link="' + menuParentLink.href + '"]');
+    menuParentButton = () => {
+        alert('button clicked');
+    }
+})

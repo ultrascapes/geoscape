@@ -1486,7 +1486,6 @@ header nav.sans-top-menu li:first-child {
     width: auto;
   }
   header nav.main-navigation ul.menu {
-    margin: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1503,20 +1502,24 @@ header nav.sans-top-menu li:first-child {
     cursor: pointer;
   }
   header nav.main-navigation li.menu-item-has-children:focus-within .sub-menu {
-    visibility: visible;
+    display: block;
   }
   header nav.main-navigation li.menu-item-has-children:hover .sub-menu {
-    visibility: visible;
-  }
-  header nav.main-navigation li.menu-item-has-children:hover:focus-within {
-    visibility: visible;
+    display: block;
   }
   header nav.main-navigation .sub-menu {
     background-color: #008000;
     position: absolute;
     z-index: 1000;
     top: 40px;
-    visibility: hidden;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    text-align: left;
+  }
+  header nav.main-navigation .sub-menu li {
+    margin: 0 10px;
+    padding: 10px;
   }
 }
 
