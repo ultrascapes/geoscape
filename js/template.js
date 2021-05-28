@@ -1,20 +1,6 @@
 function OpenMenu() {
     const menu = document.querySelector('#site-navigation');
-    const menuContent= document.querySelector('#site-navigation ul.menu');
-    const menuToggle = document.querySelector('#sans-menu-toggle use');
-    const menuHeight = menu.scrollHeight + 'px';
-    if (menu.style.maxHeight){ 
-        menu.style.maxHeight = null;
-        menuContent.style.opacity = 0;
-        menu.style.overflow = 'hidden';
-        menuToggle.setAttribute("href", "#sans-menu-open");
-    } else {
-        menu.style.overflow = 'visible';
-        menu.style.maxHeight = menuHeight;
-        menuContent.style.opacity = 1;
-        menuToggle.setAttribute("href", "#sans-menu-close");
-    }
-    
+    menu.classList.toggle('main-menu-open');
 }
 
 document.querySelector("#learn-more").addEventListener("click", function(e) {
@@ -23,12 +9,38 @@ document.querySelector("#learn-more").addEventListener("click", function(e) {
 
 
 
-const menuParentLinks = document.querySelectorAll('.menu-item-has-children > a');
+function noHover(element) {
+    element.classList.remove('sans-menu-no-js');
+}
 
-Array.prototype.forEach.call(menuParentLinks, menuParentLink => {
-    menuParentLink.outerHTML = `<button data-link="${menuParentLink.href}">${menuParentLink.textContent}</button>`;
-    let menuParentButton = document.querySelector('[data-link="' + menuParentLink.href + '"]');
-    menuParentButton = () => {
-        alert('button clicked');
-    }
-})
+const menuNoScript = document.querySelectorAll('.sans-menu-no-js');
+menuNoScript.forEach(noHover);
+
+
+function openCloseSubMenu(button) {
+    subMenuSelected = button.nextElementSibling;
+    subMenuSelected.classList.toggle('sub-menu-open');
+    function findSubMenusOpen(element) {
+        if (element !== subMenuSelected) {
+            element.classList.remove('sub-menu-open');
+            console.log(element.innerText);
+        }
+        
+    }  
+    let subMenusOpen = document.querySelectorAll('.sub-menu-open');
+    subMenusOpen.forEach(findSubMenusOpen);
+}
+
+function switchParentToButton(element) {
+    element.outerHTML = `<button data-link="${element.href}">${element.textContent}</button>`;
+    let menuParentButton = document.querySelector('[data-link="' + element.href + '"]');
+    menuParentButton.addEventListener("click", function() { 
+        openCloseSubMenu(menuParentButton); 
+    }, false);
+};
+
+const menuParentLinks = document.querySelectorAll('.menu-item-has-children > a');
+menuParentLinks.forEach(switchParentToButton);
+
+const mainMenuToggle = document.querySelector('#sans-menu-toggle');
+mainMenuToggle.outerHTML = `<button id="sans-menu-toggle" onclick="OpenMenu();">Menu</button>`;

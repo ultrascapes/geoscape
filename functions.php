@@ -44,7 +44,7 @@ add_action( 'wp_enqueue_scripts', 'geoscape_enqueue_styles' );
 // Load in JS
 function geoscape_enqueue_scripts() {
   //Change time() to version number when in production
-    wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/js/template.js', [], '0.1', true );
+    wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/js/template.js', [], time(), true );
 }
 add_action( 'wp_enqueue_scripts', 'geoscape_enqueue_scripts');
 

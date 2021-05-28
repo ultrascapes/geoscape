@@ -11,18 +11,43 @@
 @media (max-width: $tablet-max) {
     header {
         nav.main-navigation {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 200ms;
             position: absolute;
             right: 0;
             width: 100%;
             background-color: $primary;
+            display: none;
             ul {
                 &.menu {
-                    opacity: 0;
-                    transition: opacity 100ms linear 200ms;
                     margin: 20px;
+                }
+            }
+            &.main-menu-open {
+                display: block;
+            }
+        }
+
+        .sans-menu-no-js {
+            &:hover {
+                nav.main-navigation {
+                    display: block;
+                }
+            }
+            nav {
+                ul {
+                    li {
+                        &.menu-item-has-children {
+                            &:focus-within {
+                                .sub-menu {
+                                    display: block;
+                                }
+                            }
+                            &:hover {
+                                .sub-menu {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -47,10 +72,17 @@ header {
     .sans-main-menu {
         text-align: right;
         #sans-menu-toggle {
-            color: $white;
+            //color: $white;
             cursor: pointer;
-            content: "\f319";
+            //content: "\f319";
             margin: 0 10px;
+        }
+        button {
+            &#sans-menu-toggle {
+                &::after {
+                    content: "Icon";
+                }
+            }
         }
     }
 
@@ -88,6 +120,22 @@ header {
         }
     }
 
+    nav.main-navigation {
+        ul {
+            li {
+                &.menu-item-has-children {
+                    cursor: pointer;
+                    .sub-menu-open {
+                        display: block;
+                    }
+                }
+                .sub-menu {
+                display: none;
+                }
+            }
+        }
+    }
+
 }
 
 
@@ -108,6 +156,28 @@ header {
         .sans-top-brand-home {
            @include header-logo-size(80px);
         }
+        
+        .sans-menu-no-js {
+            nav {
+                ul {
+                    li {
+                        &.menu-item-has-children {
+                            &:focus-within {
+                                .sub-menu {
+                                    display: block;
+                                }
+                            }
+                            &:hover {
+                                .sub-menu {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+              
     
         nav.main-navigation {
             ul {
@@ -116,40 +186,31 @@ header {
                     flex-wrap: nowrap;
                     justify-content: flex-end;
                 }
-            }
-            li {
-                &:last-child {
-                    margin: 0 0 0 10px;
-                }
-                &.menu-item-has-children {
-                    cursor: pointer;
-                    &:focus-within {
-                        .sub-menu {
-                            display: block;
-                        }
-                    }
-                    &:hover {
-                        .sub-menu {
-                            display: block;
-                        }
-                    }
-                }
-     
-      
-            }
-            .sub-menu {
-                background-color: $primary;
-                position: absolute;
-                z-index: 1000;
-                top: 40px;
-                padding: 10px;
-                margin: 0;                
-                display: none;
-                text-align: left;
                 li {
-                    margin: 0 10px;
-                    padding: 10px;
-                }
+                    &:last-child {
+                        margin: 0 0 0 10px;
+                    }
+                    &.menu-item-has-children {
+                        cursor: pointer;
+                        .sub-menu-open {
+                            display: block;
+                        }
+                    }
+                    .sub-menu {
+                        background-color: $primary;
+                        position: absolute;
+                        z-index: 1000;
+                        top: 40px;
+                        padding: 10px;
+                        margin: 0;                
+                        display: none;
+                        text-align: left;
+                        li {
+                            margin: 0 10px;
+                            padding: 10px;
+                        }
+                    }
+                }      
             }
         }
     }
