@@ -1429,7 +1429,8 @@ header .sans-main-menu #sans-menu-toggle {
 }
 
 header .sans-main-menu button#sans-menu-toggle::after {
-  content: "Icon";
+  font-family: "dashicons";
+  content: "\f349";
 }
 
 header nav ul {
@@ -1526,6 +1527,19 @@ header nav.main-navigation ul li .sub-menu {
   }
   header nav.main-navigation ul li.menu-item-has-children {
     cursor: pointer;
+  }
+  header nav.main-navigation ul li.menu-item-has-children button {
+    background-color: #008000;
+    color: #ffffff;
+    border: none;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  header nav.main-navigation ul li.menu-item-has-children button::after {
+    font-family: "dashicons";
+    content: "\f140";
   }
   header nav.main-navigation ul li.menu-item-has-children .sub-menu-open {
     display: block;

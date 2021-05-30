@@ -72,15 +72,14 @@ header {
     .sans-main-menu {
         text-align: right;
         #sans-menu-toggle {
-            //color: $white;
             cursor: pointer;
-            //content: "\f319";
             margin: 0 10px;
         }
         button {
             &#sans-menu-toggle {
                 &::after {
-                    content: "Icon";
+                    font-family: "dashicons";
+                    content: "\f349";
                 }
             }
         }
@@ -192,6 +191,20 @@ header {
                     }
                     &.menu-item-has-children {
                         cursor: pointer;
+                        button {
+                            background-color: $primary;
+                            color: $white;
+                            border: none;
+                            font-weight: 400;
+                            font-size: 20px;
+                            padding: 0;
+                            margin: 0;
+                            &::after {
+                                font-family: "dashicons";
+                                content: "\f140";
+                            }
+                        }
+
                         .sub-menu-open {
                             display: block;
                         }

@@ -32,7 +32,7 @@ function openCloseSubMenu(button) {
 }
 
 function switchParentToButton(element) {
-    element.outerHTML = `<button data-link="${element.href}">${element.textContent}</button>`;
+    element.outerHTML = `<button class="sans-menu-parent" data-link="${element.href}">${element.textContent}</button>`;
     let menuParentButton = document.querySelector('[data-link="' + element.href + '"]');
     menuParentButton.addEventListener("click", function() { 
         openCloseSubMenu(menuParentButton); 
