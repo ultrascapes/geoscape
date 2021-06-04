@@ -1,5 +1,7 @@
 function OpenMenu() {
     const menu = document.querySelector('#site-navigation');
+    const menuButton = document.querySelector('#sans-menu-toggle');
+    menuButton.classList.toggle('menu-toggle-open');
     menu.classList.toggle('main-menu-open');
 }
 
@@ -18,12 +20,12 @@ menuNoScript.forEach(noHover);
 
 
 function openCloseSubMenu(button) {
+    button.classList.toggle('child-menu-open');
     subMenuSelected = button.nextElementSibling;
     subMenuSelected.classList.toggle('sub-menu-open');
     function findSubMenusOpen(element) {
         if (element !== subMenuSelected) {
             element.classList.remove('sub-menu-open');
-            console.log(element.innerText);
         }
         
     }  

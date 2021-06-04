@@ -12,17 +12,89 @@
     header {
         nav.main-navigation {
             position: absolute;
+            z-index: 1000;
+            top: 50px;
             right: 0;
             width: 100%;
-            background-color: $primary;
+            background-color: $white;
+            border-radius: 2px;
+            padding: 10px 20px;
+            border: solid $primary 1px;
+            filter: drop-shadow(1px 1px 3px $dark-grey);
             display: none;
             ul {
+                li {
+                    &.menu-item-has-children {
+                        button {
+                            background-color: $white;
+                            color: $primary-darker;
+                        }
+                    }
+                    .sub-menu {
+                        border-right: $primary 1px solid;
+                    }
+                    a {
+                        color: $primary-darker;
+                    }
+                }
                 &.menu {
                     margin: 20px;
                 }
             }
             &.main-menu-open {
                 display: block;
+            }
+        }
+
+        .sans-main-menu {
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            #sans-menu-toggle {
+                cursor: pointer;
+                background-color: $primary-darker;
+                color: $white;
+                border: none;
+                font-weight: 400;
+                font-size: 1.1rem;
+                font-family: sans-serif;
+                padding: 5px 10px;
+                border-radius: 2px;
+                margin: auto 0;
+                &#sans-menu-toggle {
+                    &::after {
+                        padding-left: 5px;
+                        font-family: "dashicons";
+                        content: "\f140";
+                    }
+                    &.menu-toggle-open::after {
+                        font-family: "dashicons";
+                        content: "\f142";
+                    }
+                }
+            }
+            button {
+                background-color: $primary-darker;
+                color: $white;
+                border: none;
+                font-weight: 400;
+                font-size: 1.1rem;
+                font-family: sans-serif;
+                padding: 5px 10px;
+                border-radius: 2px;
+                margin: auto 0;
+                &#sans-menu-toggle {
+                    &::after {
+                        padding-left: 5px;
+                        font-size: 1.1rem;
+                        font-family: "dashicons";
+                        content: "\f140";
+                    }
+                    &.menu-toggle-open::after {
+                        font-family: "dashicons";
+                        content: "\f142";
+                    }
+                }
             }
         }
 
@@ -59,7 +131,14 @@ header {
     .sans-top-bar {
         background-color: $primary;
         height: 50px;
+
+        .sans-top-menus-cont {
+            display: flex;
+            justify-content: space-between;
+        }
     }
+
+
     .sans-top-brand, .sans-top-brand-home {
         text-align: center;
         background-color: $white;
@@ -67,22 +146,6 @@ header {
 
     .sans-top-brand, .sans-top-brand-home {
         @include header-logo-size(80px);
-    }
-
-    .sans-main-menu {
-        text-align: right;
-        #sans-menu-toggle {
-            cursor: pointer;
-            margin: 0 10px;
-        }
-        button {
-            &#sans-menu-toggle {
-                &::after {
-                    font-family: "dashicons";
-                    content: "\f349";
-                }
-            }
-        }
     }
 
     nav {
@@ -101,10 +164,11 @@ header {
             li {
                 padding: 5px 0;
                 margin: 0 10px;
-                font-size: 20px;
+                font-size: 1.1rem;
+                font-family: sans-serif;
             }
         }
-        &.sans-top-menu {
+        &.sans-top-left-menu {
             ul {
                 display: flex;
                 a {
@@ -114,6 +178,12 @@ header {
             li {
                 &:first-child {
                     margin: 0 10px 0 0;
+                    &::before {
+                        padding-right: 5px;
+                        font-family: "dashicons";
+                        content: "\f525";
+                        color: $white;
+                    }
                 }
             }
         }
@@ -123,7 +193,36 @@ header {
         ul {
             li {
                 &.menu-item-has-children {
+                    > a {
+                        &::after {
+                            font-family: "dashicons";
+                            content: "\f140";
+                        }
+                        &:hover::after {
+                            font-family: "dashicons";
+                            content: "\f142";
+                        }
+                    }
+
                     cursor: pointer;
+                    button {
+                        cursor: pointer;
+                        border: none;
+                        font-weight: 400;
+                        font-size: 1.1rem;
+                        font-family: sans-serif;
+                        padding: 0;
+                        margin: 0;
+                        &::after {
+                            font-family: "dashicons";
+                            content: "\f140";
+                        }
+                        &.child-menu-open::after {
+                            font-family: "dashicons";
+                            content: "\f142";
+                        }
+                    }
+
                     .sub-menu-open {
                         display: block;
                     }
@@ -136,9 +235,6 @@ header {
     }
 
 }
-
-
-
 
 @media (min-width: $tablet-min) {
     header {
@@ -176,7 +272,6 @@ header {
                 }
             }
         }
-              
     
         nav.main-navigation {
             ul {
@@ -184,33 +279,26 @@ header {
                     display: flex;
                     flex-wrap: nowrap;
                     justify-content: flex-end;
+                    align-items: flex-end;
                 }
                 li {
+                    button {
+                        background-color: $primary;
+                        color: $white;
+                    }
+
                     &:last-child {
                         margin: 0 0 0 10px;
                     }
                     &.menu-item-has-children {
                         cursor: pointer;
-                        button {
-                            background-color: $primary;
-                            color: $white;
-                            border: none;
-                            font-weight: 400;
-                            font-size: 20px;
-                            padding: 0;
-                            margin: 0;
-                            &::after {
-                                font-family: "dashicons";
-                                content: "\f140";
-                            }
-                        }
-
                         .sub-menu-open {
                             display: block;
                         }
                     }
                     .sub-menu {
-                        background-color: $primary;
+                        background-color: $white;
+                        border: solid $primary 1px;
                         position: absolute;
                         z-index: 1000;
                         top: 40px;
@@ -218,9 +306,18 @@ header {
                         margin: 0;                
                         display: none;
                         text-align: left;
+                        border-radius: 2px;
+                        filter: drop-shadow(1px 1px 3px $dark-grey);
                         li {
                             margin: 0 10px;
                             padding: 10px;
+                            a {
+                                color: $primary;
+                                transition: color 200ms ease-in-out;
+                                &:hover {
+                                    color: $primary-darker;
+                                }
+                            }
                         }
                     }
                 }      
@@ -249,7 +346,6 @@ header {
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    //background-color: rgba($color: $black, $alpha: 0.75);
     background: linear-gradient(rgba($color: $dark-grey, $alpha: 0.6), rgba($color: $dark-grey, $alpha: 0.75), rgba($color: $dark-grey, $alpha: 0.99));
     
     .site-name, .site-desc {

@@ -1374,19 +1374,87 @@ main {
   background: linear-gradient(rgba(1, 1, 1, 0.4), rgba(1, 1, 1, 0.1));
 }
 
-@media (max-width: 767px) {
+@media (max-width: 759px) {
   header nav.main-navigation {
     position: absolute;
+    z-index: 1000;
+    top: 50px;
     right: 0;
     width: 100%;
-    background-color: #008000;
+    background-color: #ffffff;
+    border-radius: 2px;
+    padding: 10px 20px;
+    border: solid #008000 1px;
+    -webkit-filter: drop-shadow(1px 1px 3px #383838);
+            filter: drop-shadow(1px 1px 3px #383838);
     display: none;
+  }
+  header nav.main-navigation ul li.menu-item-has-children button {
+    background-color: #ffffff;
+    color: #004300;
+  }
+  header nav.main-navigation ul li .sub-menu {
+    border-right: #008000 1px solid;
+  }
+  header nav.main-navigation ul li a {
+    color: #004300;
   }
   header nav.main-navigation ul.menu {
     margin: 20px;
   }
   header nav.main-navigation.main-menu-open {
     display: block;
+  }
+  header .sans-main-menu {
+    text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  header .sans-main-menu #sans-menu-toggle {
+    cursor: pointer;
+    background-color: #004300;
+    color: #ffffff;
+    border: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin: auto 0;
+  }
+  header .sans-main-menu #sans-menu-toggle#sans-menu-toggle::after {
+    padding-left: 5px;
+    font-family: "dashicons";
+    content: "\f140";
+  }
+  header .sans-main-menu #sans-menu-toggle#sans-menu-toggle.menu-toggle-open::after {
+    font-family: "dashicons";
+    content: "\f142";
+  }
+  header .sans-main-menu button {
+    background-color: #004300;
+    color: #ffffff;
+    border: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin: auto 0;
+  }
+  header .sans-main-menu button#sans-menu-toggle::after {
+    padding-left: 5px;
+    font-size: 1.1rem;
+    font-family: "dashicons";
+    content: "\f140";
+  }
+  header .sans-main-menu button#sans-menu-toggle.menu-toggle-open::after {
+    font-family: "dashicons";
+    content: "\f142";
   }
   header .sans-menu-no-js:hover nav.main-navigation {
     display: block;
@@ -1404,6 +1472,15 @@ header .sans-top-bar {
   height: 50px;
 }
 
+header .sans-top-bar .sans-top-menus-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 header .sans-top-brand, header .sans-top-brand-home {
   text-align: center;
   background-color: #ffffff;
@@ -1417,20 +1494,6 @@ header .sans-top-brand .custom-logo, header .sans-top-brand-home .custom-logo {
   margin: 5px 0;
   height: 80px;
   width: auto;
-}
-
-header .sans-main-menu {
-  text-align: right;
-}
-
-header .sans-main-menu #sans-menu-toggle {
-  cursor: pointer;
-  margin: 0 10px;
-}
-
-header .sans-main-menu button#sans-menu-toggle::after {
-  font-family: "dashicons";
-  content: "\f349";
 }
 
 header nav ul {
@@ -1453,25 +1516,63 @@ header nav ul a:hover {
 header nav ul li {
   padding: 5px 0;
   margin: 0 10px;
-  font-size: 20px;
+  font-size: 1.1rem;
+  font-family: sans-serif;
 }
 
-header nav.sans-top-menu ul {
+header nav.sans-top-left-menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header nav.sans-top-menu ul a {
+header nav.sans-top-left-menu ul a {
   font-weight: 500;
 }
 
-header nav.sans-top-menu li:first-child {
+header nav.sans-top-left-menu li:first-child {
   margin: 0 10px 0 0;
+}
+
+header nav.sans-top-left-menu li:first-child::before {
+  padding-right: 5px;
+  font-family: "dashicons";
+  content: "\f525";
+  color: #ffffff;
 }
 
 header nav.main-navigation ul li.menu-item-has-children {
   cursor: pointer;
+}
+
+header nav.main-navigation ul li.menu-item-has-children > a::after {
+  font-family: "dashicons";
+  content: "\f140";
+}
+
+header nav.main-navigation ul li.menu-item-has-children > a:hover::after {
+  font-family: "dashicons";
+  content: "\f142";
+}
+
+header nav.main-navigation ul li.menu-item-has-children button {
+  cursor: pointer;
+  border: none;
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header nav.main-navigation ul li.menu-item-has-children button::after {
+  font-family: "dashicons";
+  content: "\f140";
+}
+
+header nav.main-navigation ul li.menu-item-has-children button.child-menu-open::after {
+  font-family: "dashicons";
+  content: "\f142";
 }
 
 header nav.main-navigation ul li.menu-item-has-children .sub-menu-open {
@@ -1482,7 +1583,7 @@ header nav.main-navigation ul li .sub-menu {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 760px) {
   header {
     position: -webkit-sticky;
     position: sticky;
@@ -1521,6 +1622,13 @@ header nav.main-navigation ul li .sub-menu {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  header nav.main-navigation ul li button {
+    background-color: #008000;
+    color: #ffffff;
   }
   header nav.main-navigation ul li:last-child {
     margin: 0 0 0 10px;
@@ -1528,24 +1636,12 @@ header nav.main-navigation ul li .sub-menu {
   header nav.main-navigation ul li.menu-item-has-children {
     cursor: pointer;
   }
-  header nav.main-navigation ul li.menu-item-has-children button {
-    background-color: #008000;
-    color: #ffffff;
-    border: none;
-    font-weight: 400;
-    font-size: 20px;
-    padding: 0;
-    margin: 0;
-  }
-  header nav.main-navigation ul li.menu-item-has-children button::after {
-    font-family: "dashicons";
-    content: "\f140";
-  }
   header nav.main-navigation ul li.menu-item-has-children .sub-menu-open {
     display: block;
   }
   header nav.main-navigation ul li .sub-menu {
-    background-color: #008000;
+    background-color: #ffffff;
+    border: solid #008000 1px;
     position: absolute;
     z-index: 1000;
     top: 40px;
@@ -1553,10 +1649,21 @@ header nav.main-navigation ul li .sub-menu {
     margin: 0;
     display: none;
     text-align: left;
+    border-radius: 2px;
+    -webkit-filter: drop-shadow(1px 1px 3px #383838);
+            filter: drop-shadow(1px 1px 3px #383838);
   }
   header nav.main-navigation ul li .sub-menu li {
     margin: 0 10px;
     padding: 10px;
+  }
+  header nav.main-navigation ul li .sub-menu li a {
+    color: #008000;
+    -webkit-transition: color 200ms ease-in-out;
+    transition: color 200ms ease-in-out;
+  }
+  header nav.main-navigation ul li .sub-menu li a:hover {
+    color: #004300;
   }
 }
 
@@ -1765,7 +1872,7 @@ form textarea {
   width: 90%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 760px) {
   form input[type="text"], form input[type="email"], form textarea[type="text"], form textarea[type="email"] {
     width: 600px;
   }
