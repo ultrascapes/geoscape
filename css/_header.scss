@@ -1,3 +1,49 @@
+@mixin header-logo-size($height: 200px) {
+    height: $height + 10px;
+    .custom-logo {
+        margin: 5px 0;
+        height: $height;
+        width: auto;
+    }
+}
+
+
+@mixin main-menu-toggle($script) {
+        @if $script == 'no js' {
+            cursor: pointer;
+        }
+        background-color: $primary-darker;
+        color: $white;
+        border: none;
+        font-weight: 400;
+        font-size: 1.1rem;
+        font-family: sans-serif;
+        padding: 5px 10px;
+        border-radius: 2px;
+        margin: auto 0;
+        @if $script == 'js' {
+            &::after {
+                padding-left: 5px;
+                font-family: "dashicons";
+                content: "\f140";
+            }
+            &.menu-toggle-open::after {
+                font-family: "dashicons";
+                content: "\f142";
+            }
+        } @else {
+            &::after {
+                padding-left: 5px;
+                font-family: "dashicons";
+                content: "\f140";
+            }
+            &:hover::after {
+                font-family: "dashicons";
+                content: "\f142";
+            } 
+        }
+}
+
 .sans-header-image {
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -49,53 +95,14 @@
         .sans-main-menu {
             text-align: right;
             display: flex;
-            justify-content: flex-end;
-            #sans-menu-toggle {
-                cursor: pointer;
-                background-color: $primary-darker;
-                color: $white;
-                border: none;
-                font-weight: 400;
-                font-size: 1.1rem;
-                font-family: sans-serif;
-                padding: 5px 10px;
-                border-radius: 2px;
-                margin: auto 0;
-                &#sans-menu-toggle {
-                    &::after {
-                        padding-left: 5px;
-                        font-family: "dashicons";
-                        content: "\f140";
-                    }
-                    &.menu-toggle-open::after {
-                        font-family: "dashicons";
-                        content: "\f142";
-                    }
-                }
+            justify-content: flex-end; 
+            span#sans-menu-toggle {
+                @include main-menu-toggle('no js');
             }
-            button {
-                background-color: $primary-darker;
-                color: $white;
-                border: none;
-                font-weight: 400;
-                font-size: 1.1rem;
-                font-family: sans-serif;
-                padding: 5px 10px;
-                border-radius: 2px;
-                margin: auto 0;
-                &#sans-menu-toggle {
-                    &::after {
-                        padding-left: 5px;
-                        font-size: 1.1rem;
-                        font-family: "dashicons";
-                        content: "\f140";
-                    }
-                    &.menu-toggle-open::after {
-                        font-family: "dashicons";
-                        content: "\f142";
-                    }
-                }
-            }
+            
+            button#sans-menu-toggle {
+                @include main-menu-toggle('js');
+            }      
         }
 
         .sans-menu-no-js {
@@ -142,6 +149,7 @@ header {
     .sans-top-brand, .sans-top-brand-home {
         text-align: center;
         background-color: $white;
+        border-bottom: solid 2px $neutral-darkest;
     }
 
     .sans-top-brand, .sans-top-brand-home {
@@ -193,6 +201,7 @@ header {
         ul {
             li {
                 &.menu-item-has-children {
+                    cursor: pointer;
                     > a {
                         &::after {
                             font-family: "dashicons";
@@ -203,8 +212,6 @@ header {
                             content: "\f142";
                         }
                     }
-
-                    cursor: pointer;
                     button {
                         cursor: pointer;
                         border: none;
@@ -312,10 +319,10 @@ header {
                             margin: 0 10px;
                             padding: 10px;
                             a {
-                                color: $primary;
+                                color: $primary-darker;
                                 transition: color 200ms ease-in-out;
                                 &:hover {
-                                    color: $primary-darker;
+                                    color: $primary-darkest;
                                 }
                             }
                         }
@@ -340,6 +347,15 @@ header {
 .translucent-light {
     background-color: rgba($color: $white, $alpha: 0.7);
 }
+
+
+
+
+.sans-page-head-content {
+    min-height: 400px;
+    background: linear-gradient(rgba($color: $dark-grey, $alpha: 0.6), rgba($color: $dark-grey, $alpha: 0.75), rgba($color: $dark-grey, $alpha: 0.99));
+}
+
 
 #home-site-intro {
     text-align: center;
@@ -369,24 +385,24 @@ header {
     }
 
     #learn-more {
-        display: inline-block;
+        display: block;
         margin: 0 0 20px 0;
         text-decoration: none;
         transition: color 100ms;
         text-transform: uppercase;
         color: rgba($color: $white, $alpha: 0.7);
-        svg {
-            fill: rgba($color: $white, $alpha: 0.7);
-            margin: 10px 0 10px 0;
-            width: 50px;
-            height: 25px;
-            transition: fill 100ms, margin 100ms;
+        &::after {
+            display: block;
+            font-family: "dashicons";
+            font-size: 2rem;
+            padding: 0 0 5px 0;
+            content: "\f140";
+            transition: padding 200ms ease-in-out;
         }
         &:hover {
             color: rgba($color: $white, $alpha: 0.95);
-            svg {
-                fill: rgba($color: $white, $alpha: 0.95);
-                margin: 15px 0 5px 0;
+            &::after {
+                padding: 5px 0 0 0;
             }
         }
     }
@@ -404,3 +420,27 @@ header {
     background: linear-gradient(rgba($color: $dark-grey, $alpha: 0.1), rgba($color: $dark-grey, $alpha: 0.9));
     height: 100%;
 }
+
+#primary {
+    .sans-page-head-img {
+        background-size: cover !important;
+        background-position: center !important;
+        background-attachment: fixed !important;
+    }
+    .sans-page-head-content {
+        > div {
+            display: flex;
+            h1 {
+                margin: auto;
+                font-size: 3rem;
+                font-weight: 300;
+                color: $white;
+                text-shadow: 2px 2px 5px $black;
+                text-align: center;
+            }
+        }
+ 
+    }
+}
+
+

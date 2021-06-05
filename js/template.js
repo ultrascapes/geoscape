@@ -5,11 +5,11 @@ function OpenMenu() {
     menu.classList.toggle('main-menu-open');
 }
 
-document.querySelector("#learn-more").addEventListener("click", function(e) {
-    this.style.display = "none";
-});
-
-
+if (document.querySelector("#learn-more") !== null) {
+    document.querySelector("#learn-more").addEventListener("click", function(e) {
+        this.style.display = "none";
+    });
+}
 
 function noHover(element) {
     element.classList.remove('sans-menu-no-js');
@@ -26,6 +26,7 @@ function openCloseSubMenu(button) {
     function findSubMenusOpen(element) {
         if (element !== subMenuSelected) {
             element.classList.remove('sub-menu-open');
+            element.previousElementSibling.classList.toggle('child-menu-open');
         }
         
     }  

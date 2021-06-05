@@ -1414,7 +1414,7 @@ main {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  header .sans-main-menu #sans-menu-toggle {
+  header .sans-main-menu span#sans-menu-toggle {
     cursor: pointer;
     background-color: #004300;
     color: #ffffff;
@@ -1426,16 +1426,16 @@ main {
     border-radius: 2px;
     margin: auto 0;
   }
-  header .sans-main-menu #sans-menu-toggle#sans-menu-toggle::after {
+  header .sans-main-menu span#sans-menu-toggle::after {
     padding-left: 5px;
     font-family: "dashicons";
     content: "\f140";
   }
-  header .sans-main-menu #sans-menu-toggle#sans-menu-toggle.menu-toggle-open::after {
+  header .sans-main-menu span#sans-menu-toggle:hover::after {
     font-family: "dashicons";
     content: "\f142";
   }
-  header .sans-main-menu button {
+  header .sans-main-menu button#sans-menu-toggle {
     background-color: #004300;
     color: #ffffff;
     border: none;
@@ -1448,7 +1448,6 @@ main {
   }
   header .sans-main-menu button#sans-menu-toggle::after {
     padding-left: 5px;
-    font-size: 1.1rem;
     font-family: "dashicons";
     content: "\f140";
   }
@@ -1484,6 +1483,7 @@ header .sans-top-bar .sans-top-menus-cont {
 header .sans-top-brand, header .sans-top-brand-home {
   text-align: center;
   background-color: #ffffff;
+  border-bottom: solid 2px #575757;
 }
 
 header .sans-top-brand, header .sans-top-brand-home {
@@ -1658,12 +1658,12 @@ header nav.main-navigation ul li .sub-menu {
     padding: 10px;
   }
   header nav.main-navigation ul li .sub-menu li a {
-    color: #008000;
+    color: #004300;
     -webkit-transition: color 200ms ease-in-out;
     transition: color 200ms ease-in-out;
   }
   header nav.main-navigation ul li .sub-menu li a:hover {
-    color: #004300;
+    color: #000100;
   }
 }
 
@@ -1681,6 +1681,12 @@ header nav.main-navigation ul li .sub-menu {
 
 .translucent-light {
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+.sans-page-head-content {
+  min-height: 400px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 56, 56, 0.6)), color-stop(rgba(56, 56, 56, 0.75)), to(rgba(56, 56, 56, 0.99)));
+  background: linear-gradient(rgba(56, 56, 56, 0.6), rgba(56, 56, 56, 0.75), rgba(56, 56, 56, 0.99));
 }
 
 #home-site-intro {
@@ -1722,7 +1728,7 @@ header nav.main-navigation ul li .sub-menu {
 }
 
 #home-site-intro #learn-more {
-  display: inline-block;
+  display: block;
   margin: 0 0 20px 0;
   text-decoration: none;
   -webkit-transition: color 100ms;
@@ -1731,22 +1737,22 @@ header nav.main-navigation ul li .sub-menu {
   color: rgba(255, 255, 255, 0.7);
 }
 
-#home-site-intro #learn-more svg {
-  fill: rgba(255, 255, 255, 0.7);
-  margin: 10px 0 10px 0;
-  width: 50px;
-  height: 25px;
-  -webkit-transition: fill 100ms, margin 100ms;
-  transition: fill 100ms, margin 100ms;
+#home-site-intro #learn-more::after {
+  display: block;
+  font-family: "dashicons";
+  font-size: 2rem;
+  padding: 0 0 5px 0;
+  content: "\f140";
+  -webkit-transition: padding 200ms ease-in-out;
+  transition: padding 200ms ease-in-out;
 }
 
 #home-site-intro #learn-more:hover {
   color: rgba(255, 255, 255, 0.95);
 }
 
-#home-site-intro #learn-more:hover svg {
-  fill: rgba(255, 255, 255, 0.95);
-  margin: 15px 0 5px 0;
+#home-site-intro #learn-more:hover::after {
+  padding: 5px 0 0 0;
 }
 
 #home-video-header {
@@ -1760,6 +1766,27 @@ header nav.main-navigation ul li .sub-menu {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 56, 56, 0.1)), to(rgba(56, 56, 56, 0.9)));
   background: linear-gradient(rgba(56, 56, 56, 0.1), rgba(56, 56, 56, 0.9));
   height: 100%;
+}
+
+#primary .sans-page-head-img {
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
+
+#primary .sans-page-head-content > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#primary .sans-page-head-content > div h1 {
+  margin: auto;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #010101;
+  text-align: center;
 }
 
 .sans-widget {
@@ -1887,12 +1914,7 @@ footer {
   border-top: solid 2px #575757;
 }
 
-footer .sans-footer-nav-bar ul {
-  list-style: none;
-  padding: 0;
-}
-
-footer .sans-footer-nav-bar ul.menu {
+footer .sans-footer-nav-bar nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1902,15 +1924,17 @@ footer .sans-footer-nav-bar ul.menu {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0;
+  list-style: none;
+  padding: 0;
 }
 
-footer .sans-footer-nav-bar ul.menu li {
+footer .sans-footer-nav-bar nav ul.children {
+  font-size: 0.5em;
+}
+
+footer .sans-footer-nav-bar nav ul li {
   padding: 5px 0;
   margin: 5px 10px;
-}
-
-footer .sans-footer-nav-bar ul.children {
-  font-size: 0.5em;
 }
 
 footer .custom-logo {

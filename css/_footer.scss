@@ -3,23 +3,24 @@ footer {
     background-color: $neutral-lightest;
     border-top: solid 2px $neutral-darkest;
     .sans-footer-nav-bar {
-        ul {
-            &.menu {
+        nav {
+            ul {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 margin: 0;
+                list-style: none;
+                padding: 0;
+                &.children {
+                    font-size: 0.5em;
+                }
                 li {
                     padding: 5px 0;
                     margin: 5px 10px;
-                }           
-            }
-            list-style: none;
-            padding: 0;
-            &.children {
-                font-size: 0.5em;
+                }             
             }
         }
+
     }
     
     .custom-logo {

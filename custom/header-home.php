@@ -35,8 +35,8 @@
                 </div>
  
                 <a id="learn-more" href="#home-main">
-                    Learn More<br>
-                    <svg class="sans-tri-dwn"><use href="#sans-tri-down"></use></svg>
+                    Learn More
+                    <!--<svg class="sans-tri-dwn"><use href="#sans-tri-down"></use></svg>-->
                 </a>    
             </div>
         </div>
