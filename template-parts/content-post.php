@@ -1,6 +1,6 @@
 <?php 
-    $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
-    $page_header_image = get_theme_mod('pages_header_image');
+    $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+    $page_header_image = get_theme_mod('posts_header_image');
 ?>
 
 <main id="main" role="main">
@@ -23,15 +23,17 @@
             <div class="lyt-cont-cols-sm-lg lyt-pad-vert-med">
                 <div class="lyt-col-sm">
                     <img src="<?php echo($featured_image[0])?>)" alt="<?php the_title() ?>">
-        </div>
+                </div>
                 <div class="lyt-col-lg">
                     <?php the_content(); ?>
+                    <p><?php esc_html_e( 'By ' ); ?> <?php the_author(); ?></p>
                 </div>
             </div>
         <?php } else { ?>
             <div class="lyt-cont-cols-lg-sm">
                 <div class="lyt-col-lg">
                     <?php the_content(); ?>
+                    <p><?php esc_html_e( 'By ' ); ?> <?php the_author(); ?></p>
                 </div>
                 <aside class="lyt-col-sm">
                     <?php
@@ -42,6 +44,8 @@
                 </aside>
             </div>
         <?php } ?>
+
+
         </div>
     </article>
 </main> 

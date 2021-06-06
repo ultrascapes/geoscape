@@ -56,6 +56,8 @@ register_nav_menus( [
     'footer-main-menu' => esc_html__( 'Footer Main Menu', 'geoscape' )
 ]);
 
+
+
 // Setup Widget Areas
 function geoscape_widgets_init() {
     register_sidebar([
@@ -107,6 +109,16 @@ function geoscape_widgets_init() {
     ]);  
 
     register_sidebar([
+      'name'          => esc_html__( 'Pages Sidebar', 'Geoscape' ),
+      'id'            => 'page-sidebar',
+      'description'   => esc_html__( 'Add widgets for sidebar on pages', 'Geoscape' ),
+      'before_widget' => '<div class="sans-widget">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    ]);  
+
+    register_sidebar([
       'name'          => esc_html__( 'Footer 1', 'Geoscape' ),
       'id'            => 'footer-1',
       'description'   => esc_html__( 'Add widgets for the top of the home page', 'Geoscape' ),
@@ -140,7 +152,7 @@ function geoscape_widgets_init() {
 
 
   add_filter( 'excerpt_length', function($length) {
-    return 200;
+    return 50;
 } );
 
 
@@ -277,6 +289,35 @@ function geoscape_customize_register($wp_customize) {
     'settings' => 'featured_articles_image'
   )));
   
+
+  $wp_customize->add_section('posts-and-pages', array(
+    'title' => __('Posts and Pages', 'geoscape'),
+    'description' => sprintf(__('Options for Posts and Pages header', 'geoscape')),
+    'priority' => 150
+  ));
+
+  $wp_customize->add_setting('pages_header_image', array(
+    'default' => '',
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'pages_header_image', array(
+    'label' => __('Pages Header Image', 'geoscape'),
+    'section' => 'posts-and-pages',
+    'settings' => 'pages_header_image'
+  )));
+
+  $wp_customize->add_setting('posts_header_image', array(
+    'default' => '',
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'posts_header_image', array(
+    'label' => __('Posts Header Image', 'geoscape'),
+    'section' => 'posts-and-pages',
+    'settings' => 'posts_header_image'
+  )));
+
 
 }
 

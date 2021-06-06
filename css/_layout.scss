@@ -182,3 +182,35 @@ main {
     background-color: $neutral-5;
 }
 
+
+
+.sans-article-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h2 {
+            text-align: center;
+            padding: 10px 0;
+        }
+        background-color: $neutral-2;
+        flex: 0 1 300px;
+        .sans-article-preview-img {
+            background-size: cover !important;
+            background-position: center !important;
+            height: 200px;
+
+        }
+        p {
+            padding: 0 20px;
+        }
+        .read-more {
+            display: block;
+            padding: 0 20px 20px 20px;
+        }
+    }
+}
