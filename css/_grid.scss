@@ -401,3 +401,33 @@ $column-20: repeat(20, 1fr);
     padding-top: 75px;
     padding-bottom: 75px;
 }
+
+.lyt-cont-flex {
+    display: flex;
+    flex-wrap: wrap;
+    &.lyt-flx-align-start {
+        align-items: flex-start;
+    }
+    &.lyt-gap-sm {
+        gap: 15px;
+    }
+    
+    &.lyt-gap-med {
+        gap: 50px;
+    }
+    
+    &.lyt-gap-lg {
+        gap: 75px;
+    }
+
+    .lyt-col-sm {
+        flex: 0 1 300px;
+    }
+    
+    .lyt-col-lg {
+        flex: 1 1 300px;
+    }
+}
+
+
+

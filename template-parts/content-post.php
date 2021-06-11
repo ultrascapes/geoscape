@@ -18,19 +18,19 @@
                 </div>
             </div>
         </div>
-        <div class="lyt-cont-grid-desktop">
+        <div class="lyt-cont-grid-desktop lyt-pad-vert-med">
+        <div class="lyt-col lyt-cont-flex lyt-gap-med lyt-flx-align-start">
         <?php if ($featured_image != "") { ?>
-            <div class="lyt-cont-cols-sm-lg lyt-pad-vert-med">
-                <div class="lyt-col-sm">
-                    <img src="<?php echo($featured_image[0])?>)" alt="<?php the_title() ?>">
+                <div style="flex: 0 1 <?php echo($featured_image[1])?>px">
+                    <img src="<?php echo($featured_image[0])?>)" alt="<?php the_title() ?>" width="<?php echo($featured_image[1])?>"  height="<?php echo($featured_image[2])?>">
                 </div>
-                <div class="lyt-col-lg">
+                <div style="flex: 1 1 <?php echo($featured_image[1])?>px">
                     <?php the_content(); ?>
                     <p><?php esc_html_e( 'By ' ); ?> <?php the_author(); ?></p>
                 </div>
-            </div>
+            
         <?php } else { ?>
-            <div class="lyt-cont-cols-lg-sm">
+           
                 <div class="lyt-col-lg">
                     <?php the_content(); ?>
                     <p><?php esc_html_e( 'By ' ); ?> <?php the_author(); ?></p>
@@ -42,9 +42,9 @@
                     }
                     ?>
                 </aside>
-            </div>
+          
         <?php } ?>
-
+        </div>
 
         </div>
     </article>
