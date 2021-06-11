@@ -185,20 +185,19 @@ main {
 
 
 .sans-article-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     article {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         h2 {
             text-align: center;
-            padding: 10px 0;
+            padding: 10px;
         }
         background-color: $neutral-2;
-        flex: 0 1 300px;
+        flex: 0 1 22%;
         .sans-article-preview-img {
             background-size: cover !important;
             background-position: center !important;
@@ -214,3 +213,5 @@ main {
         }
     }
 }
+
+

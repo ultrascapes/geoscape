@@ -1402,12 +1402,11 @@ main {
 }
 
 .sans-article-cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 40px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .sans-article-cards article {
@@ -1423,13 +1422,13 @@ main {
           justify-content: space-between;
   background-color: #e7e3dd;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 300px;
-          flex: 0 1 300px;
+      -ms-flex: 0 1 22%;
+          flex: 0 1 22%;
 }
 
 .sans-article-cards article h2 {
   text-align: center;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 .sans-article-cards article .sans-article-preview-img {
