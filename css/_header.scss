@@ -425,7 +425,7 @@ header {
         background-attachment: fixed !important;
     }
     .sans-page-head-content {
-        min-height: 200px;
+        min-height: 400px;
         background: linear-gradient(rgba($color: $dark-grey, $alpha: 0.6), rgba($color: $dark-grey, $alpha: 0.75), rgba($color: $dark-grey, $alpha: 0.99));
         > div {
             display: flex;
