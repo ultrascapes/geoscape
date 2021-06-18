@@ -1,7 +1,6 @@
 <?php 
     $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
     $page_header_image = get_theme_mod('posts_header_image');
-    $page_header_image = '';
 ?>
 
 <main id="main" role="main">

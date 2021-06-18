@@ -18,7 +18,7 @@
 }
 
 main {
-    background-color: $white;
+    background-color: $neutral-5;
 }
 
 .sans-row-bg-1 {
@@ -43,7 +43,7 @@ main {
 }
 
 .sans-bkgd-pg {
-    background-color: $white;
+    background-color: $neutral-5;
 }
 
 .sans-pad-10 {
@@ -216,14 +216,14 @@ main {
 
 
 .wp-block-columns {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    flex-wrap: wrap;
     .wp-block-column {
+        flex: 1 1 300px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: #e7e3dd;
+        background-color: $neutral-5;
+        padding: 5px 10px;
     }
 }
 
@@ -234,7 +234,12 @@ body {
     }
 }
 
-.sans-footer-top {
-    height: 500px;
-    background: linear-gradient(rgba($color: $white, $alpha: 1), rgba($color: $white, $alpha: 0.5));
+.sans-footer-top-img {
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    .sans-footer-top {
+    height: 250px;
+    background: linear-gradient(rgba($color: $neutral-5, $alpha: 1), rgba($color: $neutral-5, $alpha: 0.95));
+}
+
 }

@@ -4,22 +4,9 @@
 
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails', ['post', 'page'] );
-
-
 add_theme_support( 'html5' );
 add_theme_support( 'automatic-feed-links' );
-
-//add_theme_support( 'custom-background' );
-$args = array(
-  'default-color' => 'c4c4c4',
-  'default-image' => get_template_directory_uri() . '/img/home.jpg',
-  'default-repeat' => 'no-repeat',
-);
-add_theme_support( 'custom-background', $args );
-
 add_theme_support( 'custom-header');
-
-
 add_theme_support( 'custom-logo' );
 
 
@@ -323,6 +310,24 @@ function geoscape_customize_register($wp_customize) {
     'label' => __('Posts Header Image', 'geoscape'),
     'section' => 'posts-and-pages',
     'settings' => 'posts_header_image'
+  )));
+
+
+  $wp_customize->add_section('footer-settings', array(
+    'title' => __('Footer', 'geoscape'),
+    'description' => sprintf(__('Options for Footer', 'geoscape')),
+    'priority' => 150
+  ));
+
+  $wp_customize->add_setting('footer_background', array(
+    'default' => '',
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_background', array(
+    'label' => __('Footer Background Image', 'geoscape'),
+    'section' => 'footer-settings',
+    'settings' => 'footer_background'
   )));
 
 
