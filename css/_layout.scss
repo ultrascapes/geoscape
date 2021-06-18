@@ -215,3 +215,26 @@ main {
 }
 
 
+.wp-block-columns {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .wp-block-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #e7e3dd;
+    }
+}
+
+body {
+    .custom-background {
+        //background-attachment: fixed !important;
+        //background-size: cover !important;
+    }
+}
+
+.sans-footer-top {
+    height: 500px;
+    background: linear-gradient(rgba($color: $white, $alpha: 1), rgba($color: $white, $alpha: 0.5));
+}
