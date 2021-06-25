@@ -348,12 +348,6 @@ header {
     background-color: rgba($color: $white, $alpha: 0.7);
 }
 
-
-
-
-
-
-
 #home-site-intro {
     text-align: center;
     display: flex;
@@ -434,7 +428,7 @@ header {
     }
     .sans-page-head-content {     
         min-height: 150px;
-        background: linear-gradient(rgba($color: $dark-grey, $alpha: 0.6), rgba($color: $dark-grey, $alpha: 0.75), rgba($color: $dark-grey, $alpha: 0.99));
+        background: linear-gradient(rgba($color: $medium-grey, $alpha: 0.6), rgba($color: $medium-grey, $alpha: 0.75), rgba($color: $medium-grey, $alpha: 0.99));
         > div {
             display: flex;
             h1 {

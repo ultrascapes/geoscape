@@ -1900,8 +1900,8 @@ header nav.main-navigation ul li .sub-menu {
 
 #primary .sans-page-head-content {
   min-height: 150px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 56, 56, 0.6)), color-stop(rgba(56, 56, 56, 0.75)), to(rgba(56, 56, 56, 0.99)));
-  background: linear-gradient(rgba(56, 56, 56, 0.6), rgba(56, 56, 56, 0.75), rgba(56, 56, 56, 0.99));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(128, 128, 128, 0.6)), color-stop(rgba(128, 128, 128, 0.75)), to(rgba(128, 128, 128, 0.99)));
+  background: linear-gradient(rgba(128, 128, 128, 0.6), rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.99));
 }
 
 #primary .sans-page-head-content > div {
