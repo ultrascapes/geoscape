@@ -222,15 +222,8 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: $neutral-5;
+        background-color: $white;
         padding: 5px 10px;
-    }
-}
-
-body {
-    .custom-background {
-        //background-attachment: fixed !important;
-        //background-size: cover !important;
     }
 }
 

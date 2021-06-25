@@ -19,13 +19,6 @@ add_filter('upload_mimes', 'cc_mime_types');
 add_theme_support( 'customize-selective-refresh-widget' );
 add_theme_support( 'starter-content' );
 
-
-function add_categories_to_pages() {
-  register_taxonomy_for_object_type( 'category', 'page' );
-  }
-  add_action( 'init', 'add_categories_to_pages' );
-
-
 // Load in CSS
 function geoscape_enqueue_styles() {
     //Change time() to version number when in production

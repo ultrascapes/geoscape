@@ -423,6 +423,14 @@ header {
         background-size: cover !important;
         background-position: center !important;
         background-attachment: fixed !important;
+        .sans-page-head-content {
+            min-height: 200px;
+        }
+        &.sans-page-head-lg {
+            .sans-page-head-content {
+                min-height: 500px;
+            }
+        }
     }
     .sans-page-head-content {     
         min-height: 150px;
@@ -439,16 +447,6 @@ header {
             }
         }
  
-    }
-    .category-about {
-        .sans-page-head-content {
-            min-height: 200px;
-        }
-    }
-    .category-department {
-        .sans-page-head-content {
-            min-height: 500px;
-        }
     }
 }
 
