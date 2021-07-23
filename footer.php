@@ -1,5 +1,5 @@
 <?php 
-    $footer_image = get_theme_mod('footer_background');
+    $footer_image = get_theme_mod('page_background');
 ?>
 <div class="sans-footer-top-img"
 <?php if ($footer_image != "") { ?>

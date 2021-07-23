@@ -413,7 +413,7 @@ header {
 }
 
 #primary {
-    .sans-page-head-img {
+    .sans-page-head-img, .sans-pg-head-img-default {
         background-size: cover !important;
         background-position: center !important;
         background-attachment: fixed !important;
@@ -423,9 +423,28 @@ header {
         &.sans-page-head-lg {
             .sans-page-head-content {
                 min-height: 500px;
+                //min-height: 100vh;
             }
         }
     }
+
+    .sans-page-head-content, .sans-pg-head-content-default {     
+        text-align: center;
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+        }
+    }
+
+    .sans-pg-head-content-default {
+        background: linear-gradient(rgba($color: $neutral-5, $alpha: 0.9), rgba($color: $neutral-5, $alpha: 1));
+        h1 {
+            color: $dark-grey;
+            margin: 20px 0;
+        }
+  
+    }
+
     .sans-page-head-content {     
         min-height: 150px;
         background: linear-gradient(rgba($color: $medium-grey, $alpha: 0.6), rgba($color: $medium-grey, $alpha: 0.75), rgba($color: $medium-grey, $alpha: 0.99));
@@ -433,15 +452,14 @@ header {
             display: flex;
             h1 {
                 margin: auto;
-                font-size: 3rem;
-                font-weight: 300;
                 color: $white;
                 text-shadow: 2px 2px 5px $black;
                 text-align: center;
             }
         }
- 
+
     }
+
 }
 
 

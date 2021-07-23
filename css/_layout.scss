@@ -231,8 +231,9 @@ main {
     background-attachment: fixed !important;
     background-size: cover !important;
     .sans-footer-top {
-    height: 250px;
-    background: linear-gradient(rgba($color: $neutral-5, $alpha: 1), rgba($color: $neutral-5, $alpha: 0.95));
+        height: 250px;
+        background: linear-gradient(rgba($color: $neutral-5, $alpha: 1), rgba($color: $neutral-5, $alpha: 0.95));
+    }
 }
 
-}
+

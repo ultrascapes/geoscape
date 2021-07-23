@@ -306,21 +306,21 @@ function geoscape_customize_register($wp_customize) {
   )));
 
 
-  $wp_customize->add_section('footer-settings', array(
-    'title' => __('Footer', 'geoscape'),
-    'description' => sprintf(__('Options for Footer', 'geoscape')),
+  $wp_customize->add_section('page-background', array(
+    'title' => __('Page Background', 'geoscape'),
+    'description' => sprintf(__('Watermark background that appears at the top and bottom of default pages', 'geoscape')),
     'priority' => 150
   ));
 
-  $wp_customize->add_setting('footer_background', array(
+  $wp_customize->add_setting('page_background', array(
     'default' => '',
     'type' => 'theme_mod'
   ));
 
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_background', array(
-    'label' => __('Footer Background Image', 'geoscape'),
-    'section' => 'footer-settings',
-    'settings' => 'footer_background'
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'page_background', array(
+    'label' => __('Page Background Image', 'geoscape'),
+    'section' => 'page-background',
+    'settings' => 'page_background'
   )));
 
 
