@@ -262,6 +262,7 @@ main {
     background-color: rgba($white, 0.5);
     border-left: solid $primary 5px;
     padding: 0 10px 10px 10px;
+    margin: 20px 0;
     &::before {
         margin-top: 10px;
         display: inline-block;

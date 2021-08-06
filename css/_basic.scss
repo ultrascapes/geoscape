@@ -8,6 +8,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 400;
     color: $dark-grey;
+    font-size: 18px;
 }
 
 p {
@@ -28,6 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 36px;
+    text-transform: capitalize;
 }
 
 h2 {

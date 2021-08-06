@@ -8,7 +8,7 @@
         <div class="sans-pg-head-img-default" style="background: url('<?php echo($page_header_image);?>')">
             <div class="sans-pg-head-content-default lyt-cont-grid-all">
                 <div class="lyt-col center">
-                    <h1><?php wp_title(''); ?></h1>
+                    <h1><?php the_category(' - ');?></h1>
                 </div>
             </div>
         </div>
