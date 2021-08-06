@@ -6,7 +6,12 @@
             style="background: url('<?php echo($footer_image);?>')"
         <?php } ?>
 >
-    <div class="sans-footer-top"></div>
+    <div class="sans-footer-top">
+        <div>
+            <p><?php bloginfo( 'name' ); ?></p>
+            <p><?php bloginfo( 'description' ); ?></p>
+        </div>
+    </div>
 </div>
 <?php wp_footer(); ?>
 <?php get_template_part( '/custom/footer', 'main' ); ?>

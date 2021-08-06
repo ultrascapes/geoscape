@@ -8,7 +8,6 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),
 <div class="sans-article-preview-img" style="background: url('<?php echo($featured_image[0]);?>')">
 </div>
 <?php } ?>
-
     <?php the_excerpt(); ?>
-    <a href="'.esc_url(get_permalink()).'" class="read-more">Read More</a>
+    <a href="<?php echo(esc_url(get_permalink()));?>" class="read-more">Read More</a>
 </article>

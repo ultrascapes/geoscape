@@ -179,7 +179,7 @@ main {
 }
 
 #featured-articles {
-    background-color: $neutral-5;
+    background-color: $neutral-1;
 }
 
 
@@ -215,25 +215,59 @@ main {
 }
 
 
-.wp-block-columns {
-    flex-wrap: wrap;
-    .wp-block-column {
-        flex: 1 1 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: $white;
-        padding: 5px 10px;
+@media screen and (max-width: 799px) {
+    .wp-block-columns { 
+    display: block;
+        .wp-block-column {
+            flex-basis: 100% !important;
+        }
     }
+}
+
+
+@media screen and (min-width: 800px) {
+
+    .wp-block-columns {
+        //flex-wrap: no-wrap;
+        display: flex;
+        .wp-block-column {
+            //flex: 1 1 300px;
+            display: flex;
+            flex-direction: column;
+            //justify-content: space-between;
+            //background-color: $white;
+            padding: 5px 10px;
+        }
+    }
+
 }
 
 .sans-footer-top-img {
     background-attachment: fixed !important;
     background-size: cover !important;
     .sans-footer-top {
-        height: 250px;
+        min-height: 200px;
         background: linear-gradient(rgba($color: $neutral-5, $alpha: 1), rgba($color: $neutral-5, $alpha: 0.95));
+        display: flex;
+        > div {
+            margin: auto;
+            text-align: center;
+        }
+
     }
 }
 
 
+.wp-block-quote {
+    background-color: rgba($white, 0.5);
+    border-left: solid $primary 5px;
+    padding: 0 10px 10px 10px;
+    &::before {
+        margin-top: 10px;
+        display: inline-block;
+        font-family: "dashicons";
+        content: "\f122";
+        font-size: 1.5em;
+        color: $medium-grey;
+    }
+}

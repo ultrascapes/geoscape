@@ -165,7 +165,7 @@ function geoscape_widgets_init() {
           } else {
             $content .= '<h3 class="sans-post-title"><a href="'.get_the_permalink().'" rel="bookmark">'.get_the_title() .'</a></h3>';
           }
-          $content .= '<div class="sans-post-excerpt"><p>'.get_the_excerpt().'</p></div>';
+          $content .= '<div class="sans-post-excerpt"><p>'.get_the_excerpt().' <a class="read-more" href="'.get_the_permalink().'" rel="bookmark">Read More</a></p></div>';
           $content .= '</div>';
         }
         $content .= '</div>';

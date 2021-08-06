@@ -7,9 +7,10 @@
         <div class="sans-page-head-img sans-page-head-lg" 
             style="background: url('<?php header_image(); ?>')"
         >
-            <div class="sans-page-head-content lyt-cont-grid-all">
+            <div class="lyt-cont-grid-all sans-page-head-content">
                 <div class="lyt-col center">
-                    <?php the_title( '<h1>', '</h1>' ); ?>
+                        <?php the_title( '<h1>', '</h1>' ); ?>
+                        <a id="learn-more" href="#page-content">Learn More</a>             
                 </div>
             </div>
         </div>
@@ -19,13 +20,13 @@
                 <div style="flex: 0 1 <?php echo($featured_image[1])?>px">
                     <img src="<?php echo($featured_image[0])?>)" alt="<?php the_title() ?>" width="<?php echo($featured_image[1])?>"  height="<?php echo($featured_image[2])?>">
                 </div>
-                <div style="flex: 1 1 <?php echo($featured_image[1])?>px">
+                <div id="page-content" style="flex: 1 1 <?php echo($featured_image[1])?>px">
                     <?php the_content(); ?>
                 </div>
             
         <?php } else { ?>
            
-                <div class="lyt-col-lg">
+                <div id="page-content" class="lyt-col-lg">
                     <?php the_content(); ?>
                 </div>
                 <aside class="lyt-col-sm">

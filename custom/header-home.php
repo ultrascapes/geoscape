@@ -33,10 +33,6 @@
                     <div class="site-name"><h1><?php bloginfo( 'name' ); ?></h1></div>
                     <div class="site-desc"><?php bloginfo( 'description' ); ?></div>  
                 </div>
- 
-                <a id="learn-more" href="#home-main">
-                    Learn More
-                    <!--<svg class="sans-tri-dwn"><use href="#sans-tri-down"></use></svg>-->
-                </a>    
+                <a id="learn-more" href="#home-main">Learn More</a>
             </div>
         </div>
