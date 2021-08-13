@@ -1,9 +1,20 @@
+.sans-site-summary {
+    p {
+        font-size: 1.2em;
+        color: $neutral-darkest;
+    }
+}
+
 footer {
     text-align: center;
     background-color: $neutral-lightest;
     border-top: solid 2px $neutral-darkest;
     .sans-footer-nav-bar {
         nav {
+            a {
+                font-size: 1.1em;
+            }
+
             ul {
                 display: flex;
                 flex-wrap: wrap;
@@ -42,3 +53,4 @@ footer {
         padding: 20px;
     }
 }
+

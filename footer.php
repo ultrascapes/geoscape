@@ -7,7 +7,7 @@
         <?php } ?>
 >
     <div class="sans-footer-top">
-        <div>
+        <div class="sans-site-summary">
             <p><?php bloginfo( 'name' ); ?></p>
             <p><?php bloginfo( 'description' ); ?></p>
         </div>

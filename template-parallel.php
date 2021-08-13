@@ -1,6 +1,6 @@
 <?php
     // Template Name: Parallel
-    // Template Post Type: post
+    // Template Post Type: post, page
 ?>
 
 <?php get_header(); ?>
@@ -10,6 +10,6 @@
         <?php endwhile; else : ?>
             <?php get_template_part( '/template-parts/content', 'none' ); ?>
         <?php endif; ?>
-        <small>single-parallel.php</small>
+        <small>template-parallel.php</small>
     </div>
 <?php get_footer(); ?>

@@ -1450,6 +1450,7 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border: solid 1px #e3ded7;
   background-color: #e7e3dd;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 22%;
@@ -2093,7 +2094,7 @@ nav.sans-footer-top-menu ul {
 
 form input[type="text"], form input[type="email"], form textarea {
   border-radius: 2px;
-  border: 1px #0fff0f solid;
+  border: 1px #808080 solid;
   padding: 10px 5px;
   margin: 5px 0 10px 0;
 }
@@ -2123,10 +2124,19 @@ form textarea {
   }
 }
 
+.sans-site-summary p {
+  font-size: 1.2em;
+  color: #575757;
+}
+
 footer {
   text-align: center;
   background-color: #fcfcfc;
   border-top: solid 2px #575757;
+}
+
+footer .sans-footer-nav-bar nav a {
+  font-size: 1.1em;
 }
 
 footer .sans-footer-nav-bar nav ul {

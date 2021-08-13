@@ -192,6 +192,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        border: solid 1px darken($neutral-2, 2%);
         h2 {
             text-align: center;
             padding: 10px;
