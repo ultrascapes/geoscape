@@ -12,6 +12,12 @@ $column-20: repeat(20, 1fr);
     grid-template-columns: $grid-template-columns;
 }
 
+@mixin one-column-narrow {
+    .lyt-col-narrow {
+        grid-column: 3 / 11;
+    }
+}
+
 @mixin one-column {
     .lyt-col {
         grid-column: 2 / 12;
@@ -234,6 +240,8 @@ $column-20: repeat(20, 1fr);
 .lyt-cont-grid-all {
 
     @include grid-cont($column-12);
+
+    @include one-column-narrow;
         
     @include one-column;
 
@@ -261,6 +269,8 @@ $column-20: repeat(20, 1fr);
 
     @include grid-cont($column-12);
 
+    @include one-column-narrow;
+
     @include one-column;
 
     @include two-columns('1-1');
@@ -286,6 +296,8 @@ $column-20: repeat(20, 1fr);
 .lyt-cont-grid-desktop {
 
     @include grid-cont($column-12);
+
+    @include one-column-narrow;
     
     @include one-column;
 
@@ -362,6 +374,8 @@ $column-20: repeat(20, 1fr);
     .lyt-cont-grid-desktop {
 
         @include grid-cont($column-12);
+
+        @include one-column-narrow;
         
         @include one-column;
 

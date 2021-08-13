@@ -445,6 +445,10 @@ header {
   
     }
 
+    .san-pg-head-content-full {
+        background: linear-gradient(rgba($color: $neutral-5, $alpha: 0.9), rgba($color: $neutral-5, $alpha: 0.99), rgba($color: $neutral-5, $alpha: 1));
+    }
+
     .sans-page-head-content {     
         min-height: 150px;
         background: linear-gradient(rgba($color: $medium-grey, $alpha: 0.6), rgba($color: $medium-grey, $alpha: 0.75), rgba($color: $medium-grey, $alpha: 0.99));

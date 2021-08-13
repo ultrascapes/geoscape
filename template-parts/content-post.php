@@ -7,7 +7,7 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="sans-pg-head-img-default" style="background: url('<?php echo($page_header_image);?>')">
             <div class="sans-pg-head-content-default lyt-cont-grid-all">
-                <div class="lyt-col">
+                <div class="lyt-col-narrow">
                     <?php the_title( '<h1>', '</h1>' ); ?>
                     <?php if ($featured_image != "") { ?>
                        
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="lyt-cont-grid-all">
-            <div class="lyt-col">
+            <div class="lyt-col-narrow">
                 <?php the_content(); ?>
             </div>
         </div>

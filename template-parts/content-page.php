@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="lyt-cont-grid-desktop lyt-pad-vert-med">
-        <div class="lyt-col lyt-cont-flex lyt-gap-med lyt-flx-align-start">
+        <div class="lyt-col-narrow lyt-cont-flex lyt-gap-med lyt-flx-align-start">
         <?php if ($featured_image != "") { ?>
                 <div style="flex: 0 1 <?php echo($featured_image[1])?>px">
                     <img src="<?php echo($featured_image[0])?>)" alt="<?php the_title() ?>" width="<?php echo($featured_image[1])?>"  height="<?php echo($featured_image[2])?>">
