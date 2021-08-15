@@ -35,15 +35,12 @@ function geoscape_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'geoscape_enqueue_scripts');
 
-
 // Register Menu Locations
 register_nav_menus( [
     'top-menu' => esc_html__( 'Top Menu', 'geoscape' ),
     'main-menu' => esc_html__( 'Main Menu', 'geoscape' ),
     'footer-main-menu' => esc_html__( 'Footer Main Menu', 'geoscape' )
 ]);
-
-
 
 // Setup Widget Areas
 function geoscape_widgets_init() {
@@ -109,7 +106,7 @@ function geoscape_widgets_init() {
       'name'          => esc_html__( 'Footer 1', 'Geoscape' ),
       'id'            => 'footer-1',
       'description'   => esc_html__( 'Add widgets for the top of the home page', 'Geoscape' ),
-      'before_widget' => '<div class="lyt-col-1">',
+      'before_widget' => '<div class="sans-footer-widget">',
       'after_widget'  => '</div>',
       'before_title'  => '<h3>',
       'after_title'   => '</h3>',
@@ -119,7 +116,7 @@ function geoscape_widgets_init() {
         'name'          => esc_html__( 'Footer 2', 'Geoscape' ),
         'id'            => 'footer-2',
         'description'   => esc_html__( 'Add widgets for Footer position one', 'Geoscape' ),
-        'before_widget' => '<div class="lyt-col-2">',
+        'before_widget' => '<div class="sans-footer-widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',
@@ -129,7 +126,7 @@ function geoscape_widgets_init() {
         'name'          => esc_html__( 'Footer 3', 'Geoscape' ),
         'id'            => 'footer-3',
         'description'   => esc_html__( 'Add widgets for Footer position one', 'Geoscape' ),
-        'before_widget' => '<div class="lyt-col-3">',
+        'before_widget' => '<div class="sans-footer-widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',
@@ -140,7 +137,12 @@ function geoscape_widgets_init() {
 
   add_filter( 'excerpt_length', function($length) {
     return 50;
-} );
+  } );
+
+   function geoscape_excerpt_more($more) {
+     return '...';
+   }
+   add_filter('excerpt_more', 'geoscape_excerpt_more');
 
 
   function geoscape_announcements() {
@@ -178,6 +180,15 @@ function geoscape_widgets_init() {
     wp_reset_postdata();
 
   }
+
+  function exclude_category_home($query) {
+    if ($query -> is_home) {
+      $cat_id = '-'.get_cat_ID('Announcements');
+      $query -> set ('cat', $cat_id);
+    }
+    return $query;
+  }
+  add_filter('pre_get_posts', 'exclude_category_home');
 
   function geoscape_featured() {
     $post_query = new WP_Query( array(

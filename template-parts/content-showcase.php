@@ -15,31 +15,33 @@
             </div>
         </div>
         <div class="lyt-cont-grid-desktop lyt-pad-vert-med">
-        <div class="lyt-col lyt-cont-flex lyt-gap-med lyt-flx-align-start">
-        <?php if ($featured_image != "") { ?>
-                <div style="flex: 0 1 <?php echo($featured_image[1])?>px">
-                    <img src="<?php echo($featured_image[0])?>)" alt="<?php the_title() ?>" width="<?php echo($featured_image[1])?>"  height="<?php echo($featured_image[2])?>">
-                </div>
-                <div id="page-content" style="flex: 1 1 <?php echo($featured_image[1])?>px">
-                    <?php the_content(); ?>
-                </div>
+            <div class="lyt-col lyt-cont-flex lyt-gap-med lyt-flx-align-start">
+            <?php if ($featured_image != "") { ?>
+                    <div style="flex: 0 1 <?php echo($featured_image[1])?>px">
+                        <img src="<?php echo($featured_image[0])?>)" alt="<?php the_title() ?>" width="<?php echo($featured_image[1])?>"  height="<?php echo($featured_image[2])?>">
+                    </div>
+                    <div id="page-content" style="flex: 1 1 <?php echo($featured_image[1])?>px">
+                        <?php the_content(); ?>
+                    </div>
+                
+            <?php } else { ?>
             
-        <?php } else { ?>
-           
-                <div id="page-content" class="lyt-col-lg">
-                    <?php the_content(); ?>
-                </div>
-                <aside class="lyt-col-sm">
-                    <?php
-                    if ( is_active_sidebar( 'page-sidebar' ) ) {
-                        dynamic_sidebar( 'page-sidebar' );
-                    }
-                    ?>
-                </aside>
-          
-        <?php } ?>
-        </div>
-
+                    <div id="page-content" class="lyt-col-lg">
+                        <?php the_content(); ?>
+                    </div>
+                    <aside class="lyt-col-sm">
+                        <?php
+                        if ( is_active_sidebar( 'page-sidebar' ) ) {
+                            dynamic_sidebar( 'page-sidebar' );
+                        }
+                        ?>
+                    </aside>
+            
+            <?php } ?>
+            <?php if (is_single()) { ?>
+                    <p><?php esc_html_e( 'By ' ); ?> <?php the_author(); ?> | <?php the_time('M j, Y'); ?> | <?php the_category(', ');?></p>
+                <?php } ?>
+            </div>
         </div>
     </article>
 </main> 

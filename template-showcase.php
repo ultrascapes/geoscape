@@ -1,5 +1,6 @@
 <?php
     // Template Name: Showcase
+    // Template Post Type: post, page
 ?>
 
 <?php get_header(); ?>

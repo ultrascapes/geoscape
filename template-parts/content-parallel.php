@@ -17,14 +17,18 @@
                         <div style="flex: 1 1 <?php echo($featured_image[1])?>px">
                             <?php the_title( '<h1>', '</h1>' ); ?>
                             <?php the_content(); ?>
+                            <?php if (is_single()) { ?>
                             <p><?php esc_html_e( 'By ' ); ?> <?php the_author(); ?> | <?php the_time('M j, Y'); ?> | <?php the_category(', ');?></p>
+                            <?php } ?>
                         </div>
                     
                 <?php } else { ?>  
                         <div class="lyt-col-lg">
                             <?php the_title( '<h1>', '</h1>' ); ?>
                             <?php the_content(); ?>
+                            <?php if (is_single()) { ?>
                             <p><?php esc_html_e( 'By ' ); ?> <?php the_author(); ?> | <?php the_time('M j, Y'); ?> | <?php the_category(', ');?></p>
+                            <?php } ?>
                         </div>
                         <aside class="lyt-col-sm">
                             <?php
