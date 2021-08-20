@@ -5,6 +5,5 @@
         <?php endwhile; else : ?>
             <?php get_template_part( '/template-parts/content', 'none' ); ?>
         <?php endif; ?>
-        <small>single.php</small>
     </div>
 <?php get_footer(); ?>

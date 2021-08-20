@@ -28,5 +28,4 @@
     
     <?php get_sidebar(); ?>
 
-<small>attachment.php</small>
 <?php get_footer(); ?>

@@ -21,6 +21,4 @@
             <?php echo paginate_links(); ?>        
         </main>    
     </div>
-
-    <small>author.php</small>
 <?php get_footer(); ?>

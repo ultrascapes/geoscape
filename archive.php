@@ -20,6 +20,4 @@
     </div>
     
     <?php get_sidebar(); ?>
-
-<small>archive.php</small>
 <?php get_footer(); ?>

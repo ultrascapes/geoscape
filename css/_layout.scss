@@ -185,10 +185,11 @@ main {
 
 
 .sans-article-cards {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     article {
+        margin: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

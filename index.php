@@ -7,6 +7,5 @@
                 <?php get_template_part( '/template-parts/content', 'none' ); ?>
             <?php endif; ?>       
         </main>  
-        <small>index.php</small>  
     </div>
 <?php get_footer(); ?>

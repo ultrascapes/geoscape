@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="lyt-cont-grid-all lyt-pad-vert-med" id="main" role="main">
+        <div class="lyt-cont-grid-all lyt-pad-vert-sm" id="main" role="main">
             <section class="lyt-col sans-article-cards">
             <?php if ( have_posts()  ) : while ( have_posts() ) : the_post(); ?>
 
@@ -27,8 +27,7 @@
             <div class="lyt-col lyt-pad-vert-med">
                 <?php echo paginate_links(); ?>
             </div>
-            </div>
-        <small>category.php</small> 
+        </div>
     </main>
     
 <?php get_footer(); ?>
