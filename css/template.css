@@ -1456,9 +1456,9 @@ main {
           justify-content: space-between;
   border: solid 1px #e3ded7;
   background-color: #e7e3dd;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 22%;
-          flex: 0 1 22%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 22%;
+          flex: 1 1 22%;
 }
 
 .sans-article-cards article h2 {
