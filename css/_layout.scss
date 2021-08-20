@@ -141,7 +141,7 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    //background-attachment: fixed;
 }
 
 .sans-home-head-img {
@@ -152,11 +152,11 @@ main {
 
 
 
-@media screen and (max-width: 979px) {
-    .sans-home-head-img {
-        background-attachment: fixed !important;
-    }
-}
+//@media screen and (max-width: 979px) {
+//    .sans-home-head-img {
+//        background-attachment: fixed !important;
+//    }
+//}
 
 #site-outline-image, #featured-articles-image {
     background-size: cover;
@@ -245,7 +245,7 @@ main {
 }
 
 .sans-footer-top-img {
-    background-attachment: fixed !important;
+    //background-attachment: fixed !important;
     background-size: cover !important;
     .sans-footer-top {
         min-height: 200px;

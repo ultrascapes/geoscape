@@ -1392,19 +1392,12 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
 }
 
 .sans-home-head-img {
   min-height: 300px;
   background-size: cover !important;
   background-position: bottom right !important;
-}
-
-@media screen and (max-width: 979px) {
-  .sans-home-head-img {
-    background-attachment: fixed !important;
-  }
 }
 
 #site-outline-image, #featured-articles-image {
@@ -1510,7 +1503,6 @@ main {
 }
 
 .sans-footer-top-img {
-  background-attachment: fixed !important;
   background-size: cover !important;
 }
 
@@ -1855,7 +1847,6 @@ header nav.main-navigation ul li .sub-menu {
 #site-header {
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   background-position: bottom;
 }
 
@@ -1950,7 +1941,6 @@ header nav.main-navigation ul li .sub-menu {
 #primary .sans-page-head-img, #primary .sans-pg-head-img-default {
   background-size: cover !important;
   background-position: center !important;
-  background-attachment: fixed !important;
 }
 
 #primary .sans-page-head-img .sans-page-head-content, #primary .sans-pg-head-img-default .sans-page-head-content {
