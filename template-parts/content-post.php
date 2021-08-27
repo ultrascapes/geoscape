@@ -14,7 +14,7 @@
                             <img src="<?php echo($featured_image[0])?>)" alt="<?php the_title() ?>" width="<?php echo($featured_image[1])?>"  height="<?php echo($featured_image[2])?>">
                         
                     <?php } ?>
-                    <p><?php esc_html_e( 'By ' ); ?> <?php the_author(); ?> | <?php the_time('M j, Y'); ?> | <?php the_category(', ');?></p>
+                    <p><?php esc_html_e( 'By ' ); ?> <?php the_author_posts_link(); ?> | <?php the_time('M j, Y'); ?> | <?php the_category(', ');?></p>
                 </div>
             </div>
         </div>

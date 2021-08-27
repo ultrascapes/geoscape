@@ -11,8 +11,8 @@
             <div class="sans-background-tint">
                 <header id="masthead" role="banner">
                     <?php get_template_part( '/template-parts/header', 'nav' ); ?>
-                    <div class="sans-top-brand">
-                        <div class="sans-cont">
+                    <div class="sans-top-brand lyt-cont-grid-all">
+                        <div class="lyt-col">
                                 <?php
                                     if ( function_exists( 'the_custom_logo' ) ) {
                                         the_custom_logo();

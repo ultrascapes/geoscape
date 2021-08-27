@@ -17,8 +17,8 @@
             <div class="sans-background-tint">
                 <header id="masthead" role="banner">
                     <?php get_template_part( '/template-parts/header', 'nav' ); ?>
-                    <div class="sans-top-brand-home">
-                        <div class="sans-cont">
+                    <div class="sans-top-brand-home lyt-cont-grid-all">
+                        <div class="lyt-col">
                             <?php
                                 if ( function_exists( 'the_custom_logo' ) ) {
                                             the_custom_logo();
@@ -28,11 +28,9 @@
                     </div>
                 </header>
             </div>
-            <div id="home-site-intro">
-                <div class="sans-cont-flx-ctr">
-                    <div class="site-name"><h1><?php bloginfo( 'name' ); ?></h1></div>
-                    <div class="site-desc"><?php bloginfo( 'description' ); ?></div>  
-                </div>
-                <a id="learn-more" href="#home-main">Learn More</a>
+            <div class="lyt-cont-grid-all" id="home-site-intro">
+                <div class="lyt-col site-name"><h1><?php bloginfo( 'name' ); ?></h1></div>
+                <div class="lyt-col site-desc"><?php bloginfo( 'description' ); ?></div>  
+                <a class="lyt-col" id="learn-more" href="#home-main">Learn More</a>
             </div>
         </div>

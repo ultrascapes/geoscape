@@ -1,9 +1,19 @@
 <?php get_header(); ?>
     
-    <div id="primary">
-        <main id="main" role="main">
-            <h1><?php the_archive_title(); ?></h1>
+<?php 
+    $page_header_image = get_theme_mod('page_background');
+?>
 
+    <main class="sans-bkgd-pg" id="primary">
+        <div class="sans-pg-head-img-default" style="background: url('<?php echo($page_header_image);?>')">
+            <div class="sans-pg-head-content-default lyt-cont-grid-all">
+                <div class="lyt-col center">
+                    <?php the_archive_title( '<h1>', '</h1>'); ?>
+                </div>
+            </div>
+        </div>
+        <div class="lyt-cont-grid-all lyt-pad-vert-sm" id="main" role="main">
+            <section class="lyt-col sans-article-cards">
             <?php if ( have_posts()  ) : while ( have_posts() ) : the_post(); ?>
 
                 <?php get_template_part( '/template-parts/content', 'posts' ); ?>
@@ -13,11 +23,11 @@
                 <?php get_template_part( '/template-parts/content', 'none' ); ?>
 
             <?php endif; ?>
-
-            <?php echo paginate_links(); ?>
+            </section>
+            <div class="lyt-col lyt-pad-vert-med">
+                <?php echo paginate_links(); ?>
+            </div>
+        </div>
+    </main>
     
-        </main>    
-    </div>
-    
-    <?php get_sidebar(); ?>
 <?php get_footer(); ?>

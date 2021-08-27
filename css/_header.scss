@@ -7,7 +7,6 @@
     }
 }
 
-
 @mixin main-menu-toggle($script) {
         @if $script == 'no js' {
             cursor: pointer;
@@ -91,7 +90,6 @@
                 display: block;
             }
         }
-
         .sans-main-menu {
             text-align: right;
             display: flex;
@@ -104,7 +102,6 @@
                 @include main-menu-toggle('js');
             }      
         }
-
         .sans-menu-no-js {
             &:hover {
                 nav.main-navigation {
@@ -133,7 +130,6 @@
     }
 }
 
-
 header {
     .sans-top-bar {
         background-color: $primary;
@@ -144,18 +140,14 @@ header {
             justify-content: space-between;
         }
     }
-
-
     .sans-top-brand, .sans-top-brand-home {
         text-align: center;
         background-color: $white;
         border-bottom: solid 2px $neutral-darkest;
     }
-
     .sans-top-brand, .sans-top-brand-home {
         @include header-logo-size(80px);
     }
-
     nav {
         ul {
             list-style: none;
@@ -196,7 +188,6 @@ header {
             }
         }
     }
-
     nav.main-navigation {
         ul {
             li {
@@ -229,7 +220,6 @@ header {
                             content: "\f142";
                         }
                     }
-
                     .sub-menu-open {
                         display: block;
                     }
@@ -251,14 +241,12 @@ header {
                 display: none;
             }
         }
-
         .sans-top-brand {
             @include header-logo-size(80px);
         }
         .sans-top-brand-home {
            @include header-logo-size(80px);
-        }
-        
+        }    
         .sans-menu-no-js {
             nav {
                 ul {
@@ -279,7 +267,6 @@ header {
                 }
             }
         }
-    
         nav.main-navigation {
             ul {
                 &.menu {
@@ -293,7 +280,6 @@ header {
                         background-color: $primary;
                         color: $white;
                     }
-
                     &:last-child {
                         margin: 0 0 0 10px;
                     }
@@ -336,7 +322,6 @@ header {
 #site-header {
     background-repeat: no-repeat;
     background-size: cover;
-    //background-attachment: fixed;
     background-position: bottom;
 }
 
@@ -353,6 +338,7 @@ header {
     display: flex;
     flex-direction: column;
     align-content: space-around;
+    justify-content: space-around;
     background: linear-gradient(rgba($color: $dark-grey, $alpha: 0.6), rgba($color: $dark-grey, $alpha: 0.75), rgba($color: $dark-grey, $alpha: 0.99));
     
     .site-name, .site-desc {
@@ -375,7 +361,6 @@ header {
         text-shadow: 2px 2px 5px $black;
     }
 }
-
 
 #learn-more {
     display: block;
@@ -416,18 +401,15 @@ header {
     .sans-page-head-img, .sans-pg-head-img-default {
         background-size: cover !important;
         background-position: center !important;
-        //background-attachment: fixed !important;
         .sans-page-head-content {
             min-height: 200px;
         }
         &.sans-page-head-lg {
             .sans-page-head-content {
                 min-height: 500px;
-                //min-height: 100vh;
             }
         }
     }
-
     .sans-page-head-content, .sans-pg-head-content-default {     
         text-align: center;
         h1 {
@@ -435,7 +417,6 @@ header {
             font-weight: 300;
         }
     }
-
     .sans-pg-head-content-default {
         background: linear-gradient(rgba($color: $neutral-5, $alpha: 0.9), rgba($color: $neutral-5, $alpha: 1));
         h1 {
@@ -444,11 +425,9 @@ header {
         }
   
     }
-
     .san-pg-head-content-full {
         background: linear-gradient(rgba($color: $neutral-5, $alpha: 0.9), rgba($color: $neutral-5, $alpha: 0.99), rgba($color: $neutral-5, $alpha: 1));
     }
-
     .sans-page-head-content {     
         min-height: 150px;
         background: linear-gradient(rgba($color: $medium-grey, $alpha: 0.6), rgba($color: $medium-grey, $alpha: 0.75), rgba($color: $medium-grey, $alpha: 0.99));
