@@ -75,15 +75,12 @@ nav {
     }
 }
 
-
 %fields {
     border-radius: 2px;
     border: 1px $medium-grey solid;
     padding: 10px 5px;
     margin: 5px 0 10px 0;
 }
-
-
 
 form {
     label {
@@ -106,7 +103,6 @@ form {
         width: 90%;
     }
 }
-
 
 @media (min-width: $tablet-min) {
     form {

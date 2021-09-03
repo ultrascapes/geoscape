@@ -6,7 +6,6 @@ $column-12: repeat(12, 1fr);
 $column-19: repeat(19, 1fr);
 $column-20: repeat(20, 1fr);
 
-//mixins
 @mixin grid-cont($grid-template-columns) {
     display: grid;
     grid-template-columns: $grid-template-columns;

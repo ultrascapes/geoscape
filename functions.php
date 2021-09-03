@@ -220,9 +220,6 @@ function geoscape_widgets_init() {
 
   }
 
-
-
-
   function ww_load_dashicons(){
     wp_enqueue_style('dashicons');
 }
