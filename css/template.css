@@ -1537,11 +1537,11 @@ header nav.main-navigation ul li .sub-menu {
     width: auto;
   }
   header .sans-top-brand-home {
-    height: 90px;
+    height: 210px;
   }
   header .sans-top-brand-home .custom-logo {
     margin: 5px 0;
-    height: 80px;
+    height: 200px;
     width: auto;
   }
   header .sans-menu-no-js nav ul li.menu-item-has-children:focus-within .sub-menu {

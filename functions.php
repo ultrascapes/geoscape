@@ -1,7 +1,6 @@
 <?php
 
 // Add Theme Support
-
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails', ['post', 'page'] );
 add_theme_support( 'html5' );
@@ -21,17 +20,15 @@ add_theme_support( 'starter-content' );
 
 // Load in CSS
 function geoscape_enqueue_styles() {
-    //Change time() to version number when in production
     wp_enqueue_style( 'google-font-css', "https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Condensed:wght@400;700&display=swap", [], '', 'all' );
-    wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [], time(), 'all' ); 
-    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/css/template.css', ['google-font-css'], time(), 'all' ); 
+    wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [], '1.0', 'all' ); 
+    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/css/template.css', ['google-font-css'], '1.0', 'all' ); 
 }
 add_action( 'wp_enqueue_scripts', 'geoscape_enqueue_styles' );
 
 // Load in JS
 function geoscape_enqueue_scripts() {
-  //Change time() to version number when in production
-    wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/js/template.js', [], time(), true );
+    wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/js/template.js', [], '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'geoscape_enqueue_scripts');
 
